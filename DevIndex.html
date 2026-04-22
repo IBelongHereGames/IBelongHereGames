@@ -42,7 +42,6 @@ body{
     padding-top:450px;
 }
 
-/* TOP GRID */
 .top-grid{
     display:grid;
     grid-template-columns:1fr 2fr;
@@ -55,7 +54,6 @@ body{
     text-align:center;
 }
 
-/* DESKTOP / MOBILE SWITCH */
 .desktop-only{
     display:block;
 }
@@ -64,11 +62,11 @@ body{
     display:none;
 }
 
-/* SCALED GAME EMBED */
+/* SCALING EMBED */
 .game-frame-wrap{
     width:100%;
-    max-width:100%;
     overflow:hidden;
+    margin:0 auto;
 }
 
 .game-scale-box{
@@ -97,7 +95,7 @@ body{
 }
 
 .flash{
-    animation:flashColors 0.5s linear infinite;
+    animation:flashColors 0.5s linear 2s;
 }
 
 @keyframes flashColors{
@@ -112,7 +110,6 @@ body{
     display:block;
 }
 
-/* BELOW TOP */
 .content-column{
     width:60%;
     max-width:600px;
@@ -152,8 +149,7 @@ a{
 
 .video-wrap iframe{
     position:absolute;
-    top:0;
-    left:0;
+    inset:0;
     width:100%;
     height:100%;
     border:0;
@@ -169,7 +165,6 @@ a{
     height:30px;
 }
 
-/* MOBILE */
 @media (max-width:700px){
 
     body{
@@ -243,7 +238,6 @@ a{
 
     <div class="top-grid">
 
-        <!-- LEFT LINKS -->
         <div class="left">
 
             <h2><strong>Links</strong></h2>
@@ -262,14 +256,13 @@ a{
 
         </div>
 
-        <!-- RIGHT FEATURE -->
         <div class="right">
 
-            <!-- DESKTOP EMBED -->
             <div class="desktop-only">
 
                 <div class="game-frame-wrap">
                     <div class="game-scale-box" id="gameScaleBox">
+
                         <iframe
                             frameborder="0"
                             src="https://itch.io/embed-upload/17253802?color=333333"
@@ -278,12 +271,12 @@ a{
                                 Play Imma Potato Prototype on itch.io
                             </a>
                         </iframe>
+
                     </div>
                 </div>
 
             </div>
 
-            <!-- MOBILE PROMO -->
             <div class="mobile-only">
 
                 <a href="https://russellyes.itch.io/immapotato" target="_blank" class="big-link flash">
@@ -307,6 +300,77 @@ a{
         <p>
             Hi, I'm Russell, (iBelongHere) and I've been creating animations since Covid in 2020, and games with Unity since 2023. I love seeing art come to life.
         </p>
+
+        <hr class="line">
+
+        <div class="custom-spacing"></div>
+
+        <h2>Imma Potato</h2>
+
+        <p>Now Play Testing!</p>
+
+        <div class="video-wrap">
+            <iframe
+                src="https://www.youtube.com/embed/cSnpA5uLets?si=Xjm97qj19whl_p-3"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="custom-spacing"></div>
+
+        <p>
+            <a href="https://russellyes.itch.io/immapotato" target="_blank">
+                Play Imma Potato - Now Play Testing!
+            </a>
+        </p>
+
+        <hr class="line">
+
+        <div class="custom-spacing"></div>
+
+        <h2>Fight The Sun</h2>
+
+        <p>August 2025</p>
+
+        <div class="video-wrap">
+            <iframe
+                src="https://www.youtube.com/embed/bQFpz7cK5WA"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="custom-spacing"></div>
+
+        <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank">Play Fight The Sun!</a></p>
+
+        <p><a href="https://github.com/RussellYes/FightTheSun" target="_blank">Fight The Sun Github</a></p>
+
+        <hr class="line">
+
+        <div class="custom-spacing"></div>
+
+        <h2>Greed Monster</h2>
+
+        <p>July 2023</p>
+
+        <div class="video-wrap">
+            <iframe
+                src="https://www.youtube.com/embed/p1VTfJT-0FE?si=KnlYT2P8GHHjqX-3"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="custom-spacing"></div>
+
+        <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank">Play Greed Monster!</a></p>
+
+        <hr class="line">
+
+        <div class="custom-spacing"></div>
+
+        <h2>Contact</h2>
+
+        <p><a href="mailto:ibelongheregames@gmail.com">Email</a></p>
 
     </div>
 
@@ -336,4 +400,3 @@ window.addEventListener('resize', scaleGameEmbed);
 
 </body>
 </html>
-```
