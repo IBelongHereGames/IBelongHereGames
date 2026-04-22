@@ -40,74 +40,7 @@ body{
     max-width:1100px;
     margin:0 auto;
     padding-top:450px;
-}
-
-.top-grid{
-    display:grid;
-    grid-template-columns:1fr 2fr;
-    gap:20px;
-    align-items:start;
-}
-
-.left,
-.right{
     text-align:center;
-}
-
-.desktop-only{
-    display:block;
-}
-
-.mobile-only{
-    display:none;
-}
-
-/* SCALING EMBED */
-.game-frame-wrap{
-    width:100%;
-    overflow:hidden;
-    margin:0 auto;
-}
-
-.game-scale-box{
-    width:980px;
-    height:640px;
-    transform-origin:top left;
-}
-
-.game-scale-box iframe{
-    width:980px;
-    height:640px;
-    border:0;
-    display:block;
-}
-
-/* MOBILE PROMO */
-.big-link{
-    display:block;
-    font-family:'Roboto',sans-serif;
-    font-size:28px;
-    font-weight:900;
-    color:black;
-    text-decoration:underline;
-    margin-bottom:15px;
-    padding:8px;
-}
-
-.flash{
-    animation:flashColors 0.5s linear 2s;
-}
-
-@keyframes flashColors{
-    0%{background-color:magenta;}
-    49%{background-color:magenta;}
-    100%{background-color:cyan;}
-}
-
-.mobile-image{
-    width:100%;
-    height:auto;
-    display:block;
 }
 
 .content-column{
@@ -141,6 +74,47 @@ a{
     color:black;
 }
 
+.line{
+    height:3px;
+    background:black;
+    border:none;
+}
+
+.custom-spacing{
+    height:30px;
+}
+
+.flash{
+    animation:flashColors 0.5s linear 3;
+    display:inline-block;
+    padding:8px 14px;
+}
+
+@keyframes flashColors{
+    0%{background-color:magenta;}
+    49%{background-color:magenta;}
+    100%{background-color:cyan;}
+}
+
+.game-frame-wrap{
+    width:100%;
+    overflow:hidden;
+    margin:0 auto;
+}
+
+.game-scale-box{
+    width:980px;
+    height:640px;
+    transform-origin:top left;
+}
+
+.game-scale-box iframe{
+    width:980px;
+    height:640px;
+    border:0;
+    display:block;
+}
+
 .video-wrap{
     position:relative;
     width:100%;
@@ -155,16 +129,6 @@ a{
     border:0;
 }
 
-.line{
-    height:3px;
-    background:black;
-    border:none;
-}
-
-.custom-spacing{
-    height:30px;
-}
-
 @media (max-width:700px){
 
     body{
@@ -176,30 +140,6 @@ a{
     .main-container{
         width:100%;
         padding-top:250px;
-    }
-
-    .top-grid{
-        grid-template-columns:1fr;
-    }
-
-    .right{
-        order:1;
-        width:65%;
-        margin:0 auto;
-    }
-
-    .left{
-        order:2;
-        width:65%;
-        margin:0 auto;
-    }
-
-    .desktop-only{
-        display:none;
-    }
-
-    .mobile-only{
-        display:block;
     }
 
     .content-column{
@@ -221,10 +161,6 @@ a{
         font-size:17px;
     }
 
-    .big-link{
-        font-size:24px;
-    }
-
     .custom-spacing{
         height:15px;
     }
@@ -236,61 +172,19 @@ a{
 
 <div class="main-container">
 
-    <div class="top-grid">
+    <h2 class="flash">Imma Potato - Play Test Now!</h2>
 
-        <div class="left">
-
-            <h2><strong>Links</strong></h2>
-
-            <p><a href="https://russellyes.itch.io/immapotato" target="_blank">Imma Potato Now Play Testing!</a></p>
-
-            <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank">Play Fight The Sun!</a></p>
-
-            <p><a href="https://github.com/RussellYes/FightTheSun" target="_blank">Fight The Sun Github</a></p>
-
-            <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank">Play Greed Monster!</a></p>
-
-            <p><a href="https://www.youtube.com/@ibelonghere" target="_blank">YouTube</a></p>
-
-            <p><a href="mailto:ibelongheregames@gmail.com">Email</a></p>
-
-        </div>
-
-        <div class="right">
-
-            <div class="desktop-only">
-
-                <div class="game-frame-wrap">
-                    <div class="game-scale-box" id="gameScaleBox">
-
-                        <iframe
-                            frameborder="0"
-                            src="https://itch.io/embed-upload/17253802?color=333333"
-                            allowfullscreen>
-                            <a href="https://russellyes.itch.io/immapotato">
-                                Play Imma Potato Prototype on itch.io
-                            </a>
-                        </iframe>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="mobile-only">
-
-                <a href="https://russellyes.itch.io/immapotato" target="_blank" class="big-link flash">
-                    IMMA POTATO - PLAY NOW!
+    <div class="game-frame-wrap">
+        <div class="game-scale-box" id="gameScaleBox">
+            <iframe
+                frameborder="0"
+                src="https://itch.io/embed-upload/17253802?color=333333"
+                allowfullscreen>
+                <a href="https://russellyes.itch.io/immapotato">
+                    Play Imma Potato Prototype on itch.io
                 </a>
-
-                <a href="https://russellyes.itch.io/immapotato" target="_blank">
-                    <img src="LandingScreen.jpg" alt="Imma Potato" class="mobile-image">
-                </a>
-
-            </div>
-
+            </iframe>
         </div>
-
     </div>
 
     <div class="custom-spacing"></div>
@@ -300,6 +194,24 @@ a{
         <p>
             Hi, I'm Russell, (iBelongHere) and I've been creating animations since Covid in 2020, and games with Unity since 2023. I love seeing art come to life.
         </p>
+
+        <hr class="line">
+
+        <div class="custom-spacing"></div>
+
+        <h2><strong>Links</strong></h2>
+
+        <p><a href="https://russellyes.itch.io/immapotato" target="_blank">Imma Potato Now Play Testing!</a></p>
+
+        <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank">Play Fight The Sun!</a></p>
+
+        <p><a href="https://github.com/RussellYes/FightTheSun" target="_blank">Fight The Sun Github</a></p>
+
+        <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank">Play Greed Monster!</a></p>
+
+        <p><a href="https://www.youtube.com/@ibelonghere" target="_blank">YouTube</a></p>
+
+        <p><a href="mailto:ibelongheregames@gmail.com">Email</a></p>
 
         <hr class="line">
 
@@ -387,7 +299,7 @@ function scaleGameEmbed(){
     const originalHeight = 640;
 
     const availableWidth = wrap.clientWidth;
-    const scale = availableWidth / originalWidth;
+    const scale = Math.min(1, availableWidth / originalWidth);
 
     box.style.transform = 'scale(' + scale + ')';
     box.style.height = (originalHeight * scale) + 'px';
