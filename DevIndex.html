@@ -1,3 +1,4 @@
+```html id="r4m2tk"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,17 +9,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap" rel="stylesheet">
 
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ibelongheregames.github.io/IBelongHereGames/Index.html">
-<meta property="og:title" content="iBelongHere Games">
-<meta property="og:description" content="Hi, I'm Russell, (iBelongHere) and I've been creating animations since Covid in 2020, and games with Unity since 2023. I love seeing art come to life.">
-<meta property="og:image" content="IBHtCard.jpg">
-
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://ibelongheregames.github.io/IBelongHereGames/Index.html">
-<meta property="twitter:title" content="iBelongHere Games">
-<meta property="twitter:description" content="Hi, I'm Russell, (iBelongHere) and I've been creating animations since Covid in 2020, and games with Unity since 2023. I love seeing art come to life.">
-<meta property="twitter:image" content="IBHmCard.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 *{
@@ -42,7 +33,7 @@ body{
     padding-top:450px;
 }
 
-/* TOP TWO COLUMN SECTION */
+/* TOP GRID */
 .top-grid{
     display:grid;
     grid-template-columns:1fr 2fr;
@@ -55,18 +46,38 @@ body{
     text-align:center;
 }
 
+/* DESKTOP EMBED */
+.desktop-only{
+    display:block;
+}
+
+.mobile-only{
+    display:none;
+}
+
+.embed-wrap iframe{
+    width:100%;
+    max-width:552px;
+    height:167px;
+    border:0;
+    display:block;
+    margin:0 auto;
+}
+
+/* MOBILE PROMO */
 .big-link{
     display:block;
     font-family:'Roboto',sans-serif;
-    font-size:44px;
+    font-size:28px;
     font-weight:900;
     color:black;
     text-decoration:underline;
-    margin-bottom:20px;
+    margin-bottom:15px;
+    padding:8px;
 }
 
 .flash{
-    animation:flashColors 0.5s linear 3;
+    animation:flashColors 0.5s linear infinite;
 }
 
 @keyframes flashColors{
@@ -75,17 +86,13 @@ body{
     100%{background-color:cyan;}
 }
 
-.right img{
+.mobile-image{
     width:100%;
+    display:block;
     height:auto;
-    display:block;
 }
 
-.image-link{
-    display:block;
-}
-
-/* BELOW TOP SECTION */
+/* REST OF PAGE */
 .content-column{
     width:60%;
     max-width:600px;
@@ -117,11 +124,6 @@ a{
     color:black;
 }
 
-#animation,
-#contact{
-    text-align:center;
-}
-
 .video-wrap{
     position:relative;
     width:100%;
@@ -144,15 +146,14 @@ a{
 
 .custom-spacing{
     height:30px;
-    display:block;
 }
 
+/* MOBILE */
 @media (max-width:700px){
 
     body{
         background-image:url('mediaback.png');
         background-size:cover;
-        background-color:#b139f2;
     }
 
     .main-container{
@@ -164,30 +165,24 @@ a{
         grid-template-columns:1fr;
     }
 
-    /* PROMO FIRST ON MOBILE */
     .right{
         order:1;
         width:65%;
-        max-width:none;
         margin:0 auto;
     }
 
     .left{
         order:2;
         width:65%;
-        max-width:none;
         margin:0 auto;
     }
 
-    .big-link{
-        font-size:24px;
-        word-break:break-word;
+    /* SWITCH CONTENT */
+    .desktop-only{
+        display:none;
     }
 
-    .image-link,
-    .right img{
-        width:100%;
-        max-width:100%;
+    .mobile-only{
         display:block;
     }
 
@@ -221,9 +216,9 @@ a{
 
 <div class="main-container">
 
-    <!-- TOP GRID -->
     <div class="top-grid">
 
+        <!-- LINKS -->
         <div class="left">
 
             <h2><strong>Links</strong></h2>
@@ -242,17 +237,32 @@ a{
 
         </div>
 
+        <!-- PROMO COLUMN -->
         <div class="right">
 
-            <!-- CLICKABLE FLASHING TEXT -->
-            <a href="https://russellyes.itch.io/immapotato" target="_blank" class="big-link flash">
-                IMMA POTATO - PLAY TEST NOW!
-            </a>
+            <!-- DESKTOP -->
+            <div class="desktop-only">
+                <div class="embed-wrap">
+                    <iframe src="https://itch.io/embed/4417543" frameborder="0">
+                        <a href="https://russellyes.itch.io/immapotato">
+                            Imma Potato Prototype by RussellYes
+                        </a>
+                    </iframe>
+                </div>
+            </div>
 
-            <!-- CLICKABLE IMAGE -->
-            <a href="https://russellyes.itch.io/immapotato" target="_blank" class="image-link">
-                <img src="LandingScreen.jpg" alt="Imma Potato">
-            </a>
+            <!-- MOBILE -->
+            <div class="mobile-only">
+
+                <a href="https://russellyes.itch.io/immapotato" target="_blank" class="big-link flash">
+                    IMMA POTATO - PLAY NOW!
+                </a>
+
+                <a href="https://russellyes.itch.io/immapotato" target="_blank">
+                    <img src="LandingScreen.jpg" alt="Imma Potato" class="mobile-image">
+                </a>
+
+            </div>
 
         </div>
 
@@ -260,7 +270,6 @@ a{
 
     <div class="custom-spacing"></div>
 
-    <!-- SINGLE COLUMN BELOW -->
     <div class="content-column">
 
         <p>
@@ -269,112 +278,12 @@ a{
 
         <hr class="line">
 
-        <div id="animation">
-
-            <div class="custom-spacing"></div>
-            <div class="custom-spacing"></div>
-
-            <h2><strong>Imma Potato</strong></h2>
-            <p>Now Play Testing!</p>
-
-            <div class="video-wrap">
-                <iframe src="https://www.youtube.com/embed/cSnpA5uLets?si=Xjm97qj19whl_p-3" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="custom-spacing"></div>
-
-            <p><a href="https://russellyes.itch.io/immapotato" target="_blank">Play Imma Potato - Now Play Testing!</a></p>
-
-            <hr class="line">
-
-            <div class="custom-spacing"></div>
-
-            <h2><strong>Fight The Sun</strong></h2>
-            <p>August 2025</p>
-
-            <div class="video-wrap">
-                <iframe src="https://www.youtube.com/embed/bQFpz7cK5WA" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="custom-spacing"></div>
-
-            <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank">Play Fight The Sun!</a></p>
-
-            <p><a href="https://ibelongheregames.github.io/IBelongHereGames/FTSPrivacyPolicy.html" target="_blank">Fight The Sun Privacy Policy</a></p>
-
-            <p><a href="https://github.com/RussellYes/FightTheSun" target="_blank">Fight The Sun Github</a></p>
-
-            <hr class="line">
-
-            <div class="custom-spacing"></div>
-
-            <h2><strong>Greed Monster</strong></h2>
-            <p>July 2023</p>
-
-            <div class="video-wrap">
-                <iframe src="https://www.youtube.com/embed/p1VTfJT-0FE?si=KnlYT2P8GHHjqX-3" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="custom-spacing"></div>
-
-            <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank">Play Greed Monster!</a></p>
-
-            <p><a href="https://ibelongheregames.github.io/IBelongHereGames/PrivacyPolicy.html" target="_blank">Greed Monster Privacy Policy</a></p>
-
-            <hr class="line">
-
-            <div class="custom-spacing"></div>
-
-            <h2><strong>Animation</strong></h2>
-
-            <p><a href="https://youtube.com/@ibelonghere" target="_blank">IBelongHere YouTube Channel</a></p>
-
-            <p>Notable videos:</p>
-
-            <h2>Canada's History</h2>
-
-            <div class="video-wrap">
-                <iframe src="https://www.youtube.com/embed/n9_2jFf3EeI?si=h9I_-ZinLqKLh0c5" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="custom-spacing"></div>
-
-            <h2>Tool Fairy</h2>
-
-            <div class="video-wrap">
-                <iframe src="https://www.youtube.com/embed/WV7oOXrKO2w?si=B4BqTyrkdwOZkkS5" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="custom-spacing"></div>
-
-            <h2>Prisoner's Dilemma</h2>
-
-            <div class="video-wrap">
-                <iframe src="https://www.youtube.com/embed/V79joYwDH1s?si=s5pYHBXXlmlQVkS9" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="custom-spacing"></div>
-
-            <h2>TerraMike Horse</h2>
-
-            <div class="video-wrap">
-                <iframe src="https://www.youtube.com/embed/nA2FjmwYCEo?si=lgIZLutweCF_Nx92" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-        </div>
-
         <div class="custom-spacing"></div>
 
-        <hr class="line">
+        <h2>Imma Potato</h2>
 
-        <div id="contact">
-
-            <div class="custom-spacing"></div>
-
-            <h2>Contact</h2>
-
-            <p><a href="mailto:ibelongheregames@gmail.com">Email</a></p>
-
+        <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/cSnpA5uLets?si=Xjm97qj19whl_p-3" frameborder="0" allowfullscreen></iframe>
         </div>
 
     </div>
@@ -383,3 +292,4 @@ a{
 
 </body>
 </html>
+```
