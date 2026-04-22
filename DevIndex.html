@@ -164,17 +164,31 @@ a{
         grid-template-columns:1fr;
     }
 
-    /* MAKE PROMO COME FIRST */
+    /* PROMO FIRST ON MOBILE */
     .right{
         order:1;
+        width:50%;
+        max-width:none;
+        margin:0 auto;
     }
 
     .left{
         order:2;
+        width:50%;
+        max-width:none;
+        margin:0 auto;
     }
 
     .big-link{
         font-size:28px;
+        word-break:break-word;
+    }
+
+    .image-link,
+    .right img{
+        width:100%;
+        max-width:100%;
+        display:block;
     }
 
     .content-column{
