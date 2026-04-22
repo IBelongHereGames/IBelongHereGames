@@ -1,241 +1,362 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>IBelongHere Games</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ibelongheregames.github.io/IBelongHereGames/Index.html">
-    <meta property="og:title" content="iBelongHere Games">
-    <meta property="og:description" content="Hi, I'm Russell, (iBelongHere) and I've been creating animations since Covid in 2020, and games with Unity since 2023. I love seeing art come to life.">
-    <meta property="og:image" content="IBHtCard.jpg">
+<title>IBelongHere Games</title>
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ibelongheregames.github.io/IBelongHereGames/Index.html">
-    <meta property="twitter:title" content="iBelongHere Games">
-    <meta property="twitter:description" content="Hi, I'm Russell, (iBelongHere) and I've been creating animations since Covid in 2020, and games with Unity since 2023. I love seeing art come to life.">
-    <meta property="twitter:image" content="IBHmCard.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ibelongheregames.github.io/IBelongHereGames/Index.html">
+<meta property="og:title" content="iBelongHere Games">
+<meta property="og:description" content="Hi, I'm Russell, (iBelongHere) and I've been creating animations since Covid in 2020, and games with Unity since 2023. I love seeing art come to life.">
+<meta property="og:image" content="IBHtCard.jpg">
 
-        body {
-            background-color: black;
-            background-image: url('IBGback.png');
-            background-size: cover;
-            background-position: top center;
-            background-repeat: no-repeat;
-            background-color: #b139f2;
-        }
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://ibelongheregames.github.io/IBelongHereGames/Index.html">
+<meta property="twitter:title" content="iBelongHere Games">
+<meta property="twitter:description" content="Hi, I'm Russell, (iBelongHere) and I've been creating animations since Covid in 2020, and games with Unity since 2023. I love seeing art come to life.">
+<meta property="twitter:image" content="IBHmCard.jpg">
 
-        .main-container {
-            padding-top: 450px;
-            width: 60%;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: justify;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* NEW TOP GRID */
-        .top-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 20px;
-            align-items: start;
-        }
+body{
+    background-image:url('IBGback.png');
+    background-size:cover;
+    background-position:top center;
+    background-repeat:no-repeat;
+    background-color:#b139f2;
+}
 
-        .big-link {
-            font-size: 44px;
-            font-weight: 900;
-            text-decoration: underline;
-            display: block;
-            margin-bottom: 20px;
-            color: black;
-        }
+.main-container{
+    width:90%;
+    max-width:1100px;
+    margin:0 auto;
+    padding-top:450px;
+}
 
-        .flash {
-            animation: flashColors 0.5s linear 3;
-        }
+/* TOP TWO COLUMN SECTION */
+.top-grid{
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:20px;
+    align-items:start;
+}
 
-        @keyframes flashColors {
-            0% { background-color: magenta; }
-            49% { background-color: magenta; }
-            100% { background-color: cyan; }
-        }
+.left,
+.right{
+    text-align:center;
+}
 
-        .right img {
-            width: 100%;
-            height: auto;
-        }
+.big-link{
+    display:block;
+    font-family:'Roboto',sans-serif;
+    font-size:44px;
+    font-weight:900;
+    color:black;
+    text-decoration:underline;
+    margin-bottom:20px;
+}
 
-        h1, h2 {
-            font-family: 'Roboto', sans-serif;
-            font-size: 34px;
-            font-weight: 900;
-            color: black;
-            text-align: center;
-            padding-bottom: 30px;
-        }
+.flash{
+    animation:flashColors 0.5s linear 3;
+}
 
-        p, a {
-            font-family: 'Roboto', sans-serif;
-            font-size: 22px;
-            font-weight: 500;
-            color: black;
-            text-align: center;
-            padding-bottom: 30px;
-        }
+@keyframes flashColors{
+    0%{background-color:magenta;}
+    49%{background-color:magenta;}
+    100%{background-color:cyan;}
+}
 
-        .custom-spacing {
-            height: 30px;
-            display: block;
-        }
+.right img{
+    width:100%;
+    height:auto;
+    display:block;
+}
 
-        .line {
-            height: 3px;
-            background-color: black;
-            border: none;
-        }
+.image-link{
+    display:block;
+}
 
-        @media (max-width: 700px) {
-            .top-grid {
-                grid-template-columns: 1fr;
-            }
+/* BELOW TOP SECTION */
+.content-column{
+    width:60%;
+    max-width:600px;
+    margin:0 auto;
+    text-align:center;
+}
 
-            .big-link {
-                font-size: 28px;
-            }
+h1,h2{
+    font-family:'Roboto',sans-serif;
+    font-size:34px;
+    font-weight:900;
+    color:black;
+    text-align:center;
+    padding-bottom:30px;
+}
 
-            .main-container {
-                max-width: 65%;
-                padding-top: 250px;
-            }
+p{
+    font-family:'Roboto',sans-serif;
+    font-size:22px;
+    font-weight:500;
+    color:black;
+    padding-bottom:30px;
+}
 
-            h1, h2 {
-                font-size: 24px;
-            }
+a{
+    font-family:'Roboto',sans-serif;
+    font-size:22px;
+    font-weight:500;
+    color:black;
+}
 
-            p, a {
-                font-size: 17px;
-            }
-        }
-    </style>
+#animation,
+#contact{
+    text-align:center;
+}
+
+.video-wrap{
+    position:relative;
+    width:100%;
+    padding-bottom:56.25%;
+}
+
+.video-wrap iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.line{
+    height:3px;
+    background:black;
+    border:none;
+}
+
+.custom-spacing{
+    height:30px;
+    display:block;
+}
+
+@media (max-width:700px){
+
+    body{
+        background-image:url('mediaback.png');
+        background-size:cover;
+        background-color:#b139f2;
+    }
+
+    .main-container{
+        width:100%;
+        padding-top:250px;
+    }
+
+    .top-grid{
+        grid-template-columns:1fr;
+    }
+
+    .big-link{
+        font-size:28px;
+    }
+
+    .content-column{
+        width:65%;
+        max-width:none;
+    }
+
+    h1,h2{
+        font-size:24px;
+        padding-bottom:15px;
+    }
+
+    p{
+        font-size:17px;
+        padding-bottom:15px;
+    }
+
+    a{
+        font-size:17px;
+    }
+
+    .custom-spacing{
+        height:15px;
+    }
+}
+</style>
 </head>
+
 <body>
+
 <div class="main-container">
 
+    <!-- TOP GRID -->
     <div class="top-grid">
 
-        <!-- LEFT COLUMN -->
         <div class="left">
+
             <h2><strong>Links</strong></h2>
 
             <p><a href="https://russellyes.itch.io/immapotato" target="_blank">Imma Potato Now Play Testing!</a></p>
+
             <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank">Play Fight The Sun!</a></p>
+
             <p><a href="https://github.com/RussellYes/FightTheSun" target="_blank">Fight The Sun Github</a></p>
+
             <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank">Play Greed Monster!</a></p>
+
             <p><a href="https://www.youtube.com/@ibelonghere" target="_blank">YouTube</a></p>
+
             <p><a href="mailto:ibelongheregames@gmail.com">Email</a></p>
+
         </div>
 
-        <!-- RIGHT COLUMN -->
         <div class="right">
+
+            <!-- CLICKABLE FLASHING TEXT -->
             <a href="https://russellyes.itch.io/immapotato" target="_blank" class="big-link flash">
                 IMMA POTATO - CLICK TO PLAY TEST NOW!
             </a>
 
-            <a href="https://russellyes.itch.io/immapotato" target="_blank">
+            <!-- CLICKABLE IMAGE -->
+            <a href="https://russellyes.itch.io/immapotato" target="_blank" class="image-link">
                 <img src="LandingScreen.jpg" alt="Imma Potato">
             </a>
+
         </div>
 
     </div>
 
     <div class="custom-spacing"></div>
 
-    <p>Hi, I'm Russell, (iBelongHere) and I've been creating animations since Covid in 2020, and games with Unity since 2023. I love seeing art come to life.</p>
+    <!-- SINGLE COLUMN BELOW -->
+    <div class="content-column">
 
-    <hr class="line">
+        <p>
+            Hi, I'm Russell, (iBelongHere) and I've been creating animations since Covid in 2020, and games with Unity since 2023. I love seeing art come to life.
+        </p>
 
-    <div id="animation">
-<div class="custom-spacing"></div><div class="custom-spacing"></div>
-		
-  	    <h2><strong>Imma Potato</strong></h2>
-	    <p>Now Play Testing!</p>
-	    
-	   <div id="can-vid"> <iframe class="video-iframe" src="https://www.youtube.com/embed/cSnpA5uLets?si=Xjm97qj19whl_p-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-	 <div class="custom-spacing"></div>  <div class="custom-spacing"></div>
-	    <br>
-<p><a href="https://russellyes.itch.io/immapotato" target="_blank">Play Imma Potato - Now Play Testing!</a> </p>
-<div class="custom-spacing"></div>
-	    <hr class="line">
-<div class="custom-spacing"></div><div class="custom-spacing"></div>
+        <hr class="line">
 
-	    
-	      <h2><strong>Fight The Sun</strong></h2>
-	    <p>August 2025</p>
-	    
-	   <div id="can-vid"> <iframe class="video-iframe" src="https://www.youtube.com/embed/bQFpz7cK5WA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-	 <div class="custom-spacing"></div>  <div class="custom-spacing"></div>
-	    <br>
-	 <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank">Play Fight The Sun!</a> </p>	
-	     <p><a href="https://ibelongheregames.github.io/IBelongHereGames/FTSPrivacyPolicy.html" target="_blank">Fight The Sun Privacy Policy</a> </p>	
-	       <p><a href="https://github.com/RussellYes/FightTheSun" target="_blank">Fight The Sun Github</a> </p>	
-	    	  <div class="custom-spacing"></div>
-	<hr class="line">
-<div class="custom-spacing"></div><div class="custom-spacing"></div>
+        <div id="animation">
 
-			    <h2><strong>Greed Monster</strong></h2>
-	    <p>July 2023</p>
-	    
-	   <div id="can-vid"> <iframe class="video-iframe" src="https://www.youtube.com/embed/p1VTfJT-0FE?si=KnlYT2P8GHHjqX-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-	 <div class="custom-spacing"></div>  <div class="custom-spacing"></div>
-	    <br>
-	     <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank">Play Greed Monster!</a> </p>	
-	     <p><a href="https://ibelongheregames.github.io/IBelongHereGames/PrivacyPolicy.html" target="_blank">Greed Monster Privacy Policy</a> </p>	
-<div class="custom-spacing"></div>
-	    <hr class="line">
-<div class="custom-spacing"></div><div class="custom-spacing"></div>
-	    
-	    <h2><strong>Animation</strong></h2>
+            <div class="custom-spacing"></div>
+            <div class="custom-spacing"></div>
 
-        <p><a href="https://youtube.com/@ibelonghere" target="_blank">IBelongHere YouTube Channel</a> </p>
+            <h2><strong>Imma Potato</strong></h2>
+            <p>Now Play Testing!</p>
 
-    <p>Notable videos:</p>
-	    <h2>Canada's History</h2>
-	
-	   <div id="can-vid"> <iframe class="video-iframe" src="https://www.youtube.com/embed/n9_2jFf3EeI?si=h9I_-ZinLqKLh0c5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-	 <div class="custom-spacing"></div>  <div class="custom-spacing"></div>
-	    <h2>Tool Fairy</h2>
-	  
-	 <div id="tf-vid">   <iframe class="video-iframe" src="https://www.youtube.com/embed/WV7oOXrKO2w?si=B4BqTyrkdwOZkkS5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-	<div class="custom-spacing"></div>     <div class="custom-spacing"></div>
-	    <h2>Prisoner's Dilemma</h2>
-	
-	  <div id="pd-vid">  <iframe class="video-iframe" src="https://www.youtube.com/embed/V79joYwDH1s?si=s5pYHBXXlmlQVkS9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-	  <div class="custom-spacing"></div>  <div class="custom-spacing"></div>
-	    <h2>TerraMike Horse</h2>
-	 
-	<div id="tm-vid">    <iframe class="video-iframe" src="https://www.youtube.com/embed/nA2FjmwYCEo?si=lgIZLutweCF_Nx92" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-	<div class="custom-spacing"></div>
-    
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/cSnpA5uLets?si=Xjm97qj19whl_p-3" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="custom-spacing"></div>
+
+            <p><a href="https://russellyes.itch.io/immapotato" target="_blank">Play Imma Potato - Now Play Testing!</a></p>
+
+            <hr class="line">
+
+            <div class="custom-spacing"></div>
+
+            <h2><strong>Fight The Sun</strong></h2>
+            <p>August 2025</p>
+
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/bQFpz7cK5WA" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="custom-spacing"></div>
+
+            <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank">Play Fight The Sun!</a></p>
+
+            <p><a href="https://ibelongheregames.github.io/IBelongHereGames/FTSPrivacyPolicy.html" target="_blank">Fight The Sun Privacy Policy</a></p>
+
+            <p><a href="https://github.com/RussellYes/FightTheSun" target="_blank">Fight The Sun Github</a></p>
+
+            <hr class="line">
+
+            <div class="custom-spacing"></div>
+
+            <h2><strong>Greed Monster</strong></h2>
+            <p>July 2023</p>
+
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/p1VTfJT-0FE?si=KnlYT2P8GHHjqX-3" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="custom-spacing"></div>
+
+            <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank">Play Greed Monster!</a></p>
+
+            <p><a href="https://ibelongheregames.github.io/IBelongHereGames/PrivacyPolicy.html" target="_blank">Greed Monster Privacy Policy</a></p>
+
+            <hr class="line">
+
+            <div class="custom-spacing"></div>
+
+            <h2><strong>Animation</strong></h2>
+
+            <p><a href="https://youtube.com/@ibelonghere" target="_blank">IBelongHere YouTube Channel</a></p>
+
+            <p>Notable videos:</p>
+
+            <h2>Canada's History</h2>
+
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/n9_2jFf3EeI?si=h9I_-ZinLqKLh0c5" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="custom-spacing"></div>
+
+            <h2>Tool Fairy</h2>
+
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/WV7oOXrKO2w?si=B4BqTyrkdwOZkkS5" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="custom-spacing"></div>
+
+            <h2>Prisoner's Dilemma</h2>
+
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/V79joYwDH1s?si=s5pYHBXXlmlQVkS9" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="custom-spacing"></div>
+
+            <h2>TerraMike Horse</h2>
+
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/nA2FjmwYCEo?si=lgIZLutweCF_Nx92" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+        </div>
+
+        <div class="custom-spacing"></div>
+
+        <hr class="line">
+
+        <div id="contact">
+
+            <div class="custom-spacing"></div>
+
+            <h2>Contact</h2>
+
+            <p><a href="mailto:ibelongheregames@gmail.com">Email</a></p>
+
+        </div>
+
     </div>
-		<div class="custom-spacing"></div><div class="custom-spacing"></div>
-<hr class="line">
-		
 
-    <div id="contact">
-<div class="custom-spacing"></div><div class="custom-spacing"></div>
-	    <h2>Contact</h2>
-	    <p><a href="mailto:ibelongheregames@gmail.com">Email</a> </p>
-	
-    </div>
-	<br>
-	</div>
+</div>
+
 </body>
 </html>
