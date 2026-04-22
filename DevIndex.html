@@ -1,3 +1,4 @@
+```html id="m8k3qp"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +56,7 @@ body{
     text-align:center;
 }
 
-/* DESKTOP GAME */
+/* DESKTOP / MOBILE SWITCH */
 .desktop-only{
     display:block;
 }
@@ -64,20 +65,24 @@ body{
     display:none;
 }
 
+/* SCALED GAME EMBED */
 .game-frame-wrap{
-    position:relative;
     width:100%;
-    max-width:980px;
-    margin:0 auto;
-    aspect-ratio:980 / 640;
+    max-width:100%;
+    overflow:hidden;
 }
 
-.game-frame-wrap iframe{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
+.game-scale-box{
+    width:980px;
+    height:640px;
+    transform-origin:top left;
+}
+
+.game-scale-box iframe{
+    width:980px;
+    height:640px;
     border:0;
+    display:block;
 }
 
 /* MOBILE PROMO */
@@ -93,7 +98,7 @@ body{
 }
 
 .flash{
-    animation:flashColors 0.5s linear 2s;
+    animation:flashColors 0.5s linear infinite;
 }
 
 @keyframes flashColors{
@@ -108,7 +113,7 @@ body{
     display:block;
 }
 
-/* CONTENT BELOW */
+/* BELOW TOP */
 .content-column{
     width:60%;
     max-width:600px;
@@ -195,7 +200,6 @@ a{
         margin:0 auto;
     }
 
-    /* swap views */
     .desktop-only{
         display:none;
     }
@@ -238,7 +242,6 @@ a{
 
 <div class="main-container">
 
-    <!-- TOP GRID -->
     <div class="top-grid">
 
         <!-- LEFT LINKS -->
@@ -263,18 +266,20 @@ a{
         <!-- RIGHT FEATURE -->
         <div class="right">
 
-            <!-- DESKTOP PLAYABLE GAME -->
+            <!-- DESKTOP EMBED -->
             <div class="desktop-only">
 
                 <div class="game-frame-wrap">
-                    <iframe
-                        frameborder="0"
-                        src="https://itch.io/embed-upload/17253802?color=333333"
-                        allowfullscreen>
-                        <a href="https://russellyes.itch.io/immapotato">
-                            Play Imma Potato Prototype on itch.io
-                        </a>
-                    </iframe>
+                    <div class="game-scale-box" id="gameScaleBox">
+                        <iframe
+                            frameborder="0"
+                            src="https://itch.io/embed-upload/17253802?color=333333"
+                            allowfullscreen>
+                            <a href="https://russellyes.itch.io/immapotato">
+                                Play Imma Potato Prototype on itch.io
+                            </a>
+                        </iframe>
+                    </div>
                 </div>
 
             </div>
@@ -298,87 +303,38 @@ a{
 
     <div class="custom-spacing"></div>
 
-    <!-- CONTENT BELOW -->
     <div class="content-column">
 
         <p>
             Hi, I'm Russell, (iBelongHere) and I've been creating animations since Covid in 2020, and games with Unity since 2023. I love seeing art come to life.
         </p>
 
-        <hr class="line">
-
-        <div class="custom-spacing"></div>
-
-        <h2>Imma Potato</h2>
-
-        <p>Now Play Testing!</p>
-
-        <div class="video-wrap">
-            <iframe
-                src="https://www.youtube.com/embed/cSnpA5uLets?si=Xjm97qj19whl_p-3"
-                allowfullscreen>
-            </iframe>
-        </div>
-
-        <div class="custom-spacing"></div>
-
-        <p>
-            <a href="https://russellyes.itch.io/immapotato" target="_blank">
-                Play Imma Potato - Now Play Testing!
-            </a>
-        </p>
-
-        <hr class="line">
-
-        <div class="custom-spacing"></div>
-
-        <h2>Fight The Sun</h2>
-
-        <p>August 2025</p>
-
-        <div class="video-wrap">
-            <iframe
-                src="https://www.youtube.com/embed/bQFpz7cK5WA"
-                allowfullscreen>
-            </iframe>
-        </div>
-
-        <div class="custom-spacing"></div>
-
-        <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank">Play Fight The Sun!</a></p>
-
-        <p><a href="https://github.com/RussellYes/FightTheSun" target="_blank">Fight The Sun Github</a></p>
-
-        <hr class="line">
-
-        <div class="custom-spacing"></div>
-
-        <h2>Greed Monster</h2>
-
-        <p>July 2023</p>
-
-        <div class="video-wrap">
-            <iframe
-                src="https://www.youtube.com/embed/p1VTfJT-0FE?si=KnlYT2P8GHHjqX-3"
-                allowfullscreen>
-            </iframe>
-        </div>
-
-        <div class="custom-spacing"></div>
-
-        <p><a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank">Play Greed Monster!</a></p>
-
-        <hr class="line">
-
-        <div class="custom-spacing"></div>
-
-        <h2>Contact</h2>
-
-        <p><a href="mailto:ibelongheregames@gmail.com">Email</a></p>
-
     </div>
 
 </div>
 
+<script>
+function scaleGameEmbed(){
+    const wrap = document.querySelector('.game-frame-wrap');
+    const box = document.getElementById('gameScaleBox');
+
+    if(!wrap || !box) return;
+
+    const originalWidth = 980;
+    const originalHeight = 640;
+
+    const availableWidth = wrap.clientWidth;
+    const scale = availableWidth / originalWidth;
+
+    box.style.transform = 'scale(' + scale + ')';
+    box.style.height = (originalHeight * scale) + 'px';
+    wrap.style.height = (originalHeight * scale) + 'px';
+}
+
+window.addEventListener('load', scaleGameEmbed);
+window.addEventListener('resize', scaleGameEmbed);
+</script>
+
 </body>
 </html>
+```
