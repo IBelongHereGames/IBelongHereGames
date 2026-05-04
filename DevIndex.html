@@ -1,4 +1,3 @@
-```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,14 +28,17 @@
 }
 
 body{
+    background-color:#b139f2;
+}
+
+/* NEW: constrain background to 90% viewport width */
+.bg-wrap{
+    width:90vw;
     margin:0 auto;
-    max-width:1970px;
     background-image:url('IBGback.png');
     background-size:cover;
     background-position:center top;
     background-repeat:no-repeat;
-    background-color:#b139f2;
-    overflow-x:hidden;
 }
 
 .main-container{
@@ -163,8 +165,8 @@ a{
 
 @media (max-width:700px){
 
-    body{
-        max-width:none;
+    .bg-wrap{
+        width:100%;
         background-image:url('mediaback.png');
         background-size:cover;
         background-position:top center;
@@ -210,6 +212,8 @@ a{
 </head>
 
 <body>
+
+<div class="bg-wrap">
 
 <div class="main-container">
 
@@ -361,6 +365,8 @@ a{
 
 </div>
 
+</div>
+
 <script>
 function scaleGameEmbed(){
     const wrap = document.querySelector('.game-frame-wrap');
@@ -385,4 +391,3 @@ window.addEventListener('resize', scaleGameEmbed);
 
 </body>
 </html>
-```
