@@ -29,12 +29,19 @@
 }
 
 body{
+    background-color:#b139f2;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND WRAPPER (LIMITED WIDTH) */
+.bg-wrap{
+    width:100%;
+    max-width:1970px;
+    margin:0 auto;
     background-image:url('IBGback.png');
     background-size:cover;
     background-position:center top;
     background-repeat:no-repeat;
-    background-color:#b139f2;
-    overflow-x:hidden;
 }
 
 .main-container{
@@ -161,11 +168,10 @@ a{
 
 @media (max-width:700px){
 
-    body{
+    .bg-wrap{
         background-image:url('mediaback.png');
         background-size:cover;
         background-position:top center;
-        background-color:#b139f2;
     }
 
     .main-container{
@@ -208,6 +214,8 @@ a{
 </head>
 
 <body>
+
+<div class="bg-wrap">
 
 <div class="main-container">
 
@@ -320,7 +328,7 @@ a{
         <div class="video-wrap">
             <iframe src="https://www.youtube.com/embed/n9_2jFf3EeI?si=h9I_-ZinLqKLh0c5" allowfullscreen></iframe>
         </div>
-                <div class="custom-spacing"></div>
+        <div class="custom-spacing"></div>
         <hr class="line">
 
         <div class="custom-spacing"></div>
@@ -329,7 +337,7 @@ a{
         <div class="video-wrap">
             <iframe src="https://www.youtube.com/embed/WV7oOXrKO2w?si=B4BqTyrkdwOZkkS5" allowfullscreen></iframe>
         </div>
-                <div class="custom-spacing"></div>
+        <div class="custom-spacing"></div>
         <hr class="line">
 
         <div class="custom-spacing"></div>
@@ -338,7 +346,7 @@ a{
         <div class="video-wrap">
             <iframe src="https://www.youtube.com/embed/V79joYwDH1s?si=s5pYHBXXlmlQVkS9" allowfullscreen></iframe>
         </div>
-                <div class="custom-spacing"></div>
+        <div class="custom-spacing"></div>
         <hr class="line">
 
         <div class="custom-spacing"></div>
@@ -347,7 +355,7 @@ a{
         <div class="video-wrap">
             <iframe src="https://www.youtube.com/embed/nA2FjmwYCEo?si=lgIZLutweCF_Nx92" allowfullscreen></iframe>
         </div>
-                <div class="custom-spacing"></div>
+        <div class="custom-spacing"></div>
         <hr class="line">
 
         <div class="custom-spacing"></div>
@@ -356,6 +364,8 @@ a{
         <p><a href="mailto:ibelongheregames@gmail.com">Email</a></p>
 
     </div>
+
+</div>
 
 </div>
 
