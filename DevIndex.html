@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +40,7 @@ body{
     width:90%;
     max-width:1100px;
     margin:0 auto;
-    padding-top:583px;
+    padding-top:692px;
     text-align:center;
 }
 
@@ -84,18 +85,6 @@ a{
     height:30px;
 }
 
-.flash{
-    animation:flashColors 0.5s linear 3;
-    display:inline-block;
-    padding:8px 14px;
-}
-
-@keyframes flashColors{
-    0%{background-color:magenta;}
-    49%{background-color:magenta;}
-    100%{background-color:cyan;}
-}
-
 /* DESKTOP / MOBILE SWITCH */
 .desktop-only{
     display:block;
@@ -105,13 +94,20 @@ a{
     display:none;
 }
 
-/* CENTERED DESKTOP GAME FRAME */
+/* DESKTOP GAME - OUTSIDE MAIN CONTAINER */
+.desktop-game{
+    position:absolute;
+    top:0;
+    right:0;
+    z-index:10;
+}
+
+/* DESKTOP GAME FRAME */
 .game-frame-wrap{
-    width:100%;
+    width:980px;
     overflow:hidden;
-    margin:0 auto;
     display:flex;
-    justify-content:right;
+    justify-content:flex-end;
 }
 
 .game-scale-box{
@@ -206,28 +202,21 @@ a{
 
 <body>
 
-<div class="main-container">
-
-
-    <div class="desktop-only">
-        <h2 class="flash">Imma Potato - Play Test Now!</h2>
-
-        <div class="game-frame-wrap">
-            <div class="game-scale-box" id="gameScaleBox">
-                 <iframe 
+<div class="desktop-only desktop-game">
+    <div class="game-frame-wrap">
+        <div class="game-scale-box" id="gameScaleBox">
+            <iframe 
                 src="https://itch.io/embed-upload/17384501?color=333333" 
                 allowfullscreen>
             </iframe>
-            </div>
         </div>
     </div>
+</div>
+
+<div class="main-container">
 
     <div class="mobile-only">
         <div class="mobile-hero">
-            <a href="https://russellyes.itch.io/immapotato" target="_blank">
-                <h2 class="flash">Imma Potato - Play Test Now!</h2>
-            </a>
-
             <a href="https://russellyes.itch.io/immapotato" target="_blank">
                 <img src="LandingScreen.jpg" alt="Imma Potato">
             </a>
@@ -357,8 +346,6 @@ a{
 
 </div>
 
-</div>
-
 <script>
 function scaleGameEmbed(){
     const wrap = document.querySelector('.game-frame-wrap');
@@ -383,3 +370,4 @@ window.addEventListener('resize', scaleGameEmbed);
 
 </body>
 </html>
+```
