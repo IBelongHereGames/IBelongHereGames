@@ -101,7 +101,25 @@ a{
     right:50px;
     z-index:10;
 }
+    
+.steam{
+    position:absolute;
+    top:550px;
+    right:340px;
+    z-index:20;
+}
 
+.steam img{
+    display:block;
+    width:auto;
+    height:auto;
+    transition:transform 0.15s ease;
+    transform-origin:center;
+}
+
+.steam img:hover{
+    transform:scale(1.05);
+}
 /* DESKTOP GAME FRAME */
 .game-frame-wrap{
     width:980px;
@@ -203,6 +221,11 @@ a{
 <body>
 
 <div class="desktop-only desktop-game">
+    <div class="steam">
+    <a href="https://store.steampowered.com/app/4789360/Imma_Potato/" target="_blank">
+        <img src="ImmaPotatoButton.png" alt="Steam">
+    </a>
+</div>
     <div class="game-frame-wrap">
         <div class="game-scale-box" id="gameScaleBox">
             <iframe 
