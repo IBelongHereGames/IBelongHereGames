@@ -413,6 +413,9 @@ function scaleGameEmbed(){
     box.style.height = (originalHeight * scale) + 'px';
     wrap.style.height = (originalHeight * scale) + 'px';
 
+    window.addEventListener('load', scaleGameEmbed);
+    window.addEventListener('resize', scaleGameEmbed);
+
 const steamButton = document.querySelector('.steam');
 
 steamButton.addEventListener('mouseenter', function () {
@@ -421,8 +424,7 @@ steamButton.addEventListener('mouseenter', function () {
 </script>
 }
 
-window.addEventListener('load', scaleGameEmbed);
-window.addEventListener('resize', scaleGameEmbed);
+
 </script>
 
 </body>
