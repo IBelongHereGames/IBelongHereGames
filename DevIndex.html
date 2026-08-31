@@ -116,10 +116,11 @@ a{
     width:auto;
     height:auto;
 
+    /* Button displays at 75% of original size */
     transform:scale(0.75);
     transform-origin:center;
 
-    /* No glow until the game iframe loads */
+    /* No glow until embedded game has loaded */
     filter:none;
 
     transition:
@@ -127,11 +128,14 @@ a{
         filter 0.25s ease;
 }
 
-/* Start glow after game iframe loads */
+/* Glow begins after game iframe loads */
 .steam.glow-start img{
-    animation:steamGlowIn 0.5s ease forwards;
+    animation:
+        steamGlowIn 0.5s ease forwards,
+        steamGlowPulse 1s ease-in-out 0.5s infinite;
 }
 
+/* Initial 0.5 second glow fade-in */
 @keyframes steamGlowIn{
     from{
         filter:
@@ -146,12 +150,27 @@ a{
     }
 }
 
-/* Button still grows 5% on hover */
+/* Continuous ~60 BPM glow pulse */
+@keyframes steamGlowPulse{
+    0%, 100%{
+        filter:
+            drop-shadow(0 0 4px rgba(136, 194, 62, 0.65))
+            drop-shadow(0 0 8px rgba(136, 194, 62, 0.65));
+    }
+
+    50%{
+        filter:
+            drop-shadow(0 0 7px rgba(136, 194, 62, 1))
+            drop-shadow(0 0 14px rgba(136, 194, 62, 1));
+    }
+}
+
+/* 5% larger on hover */
 .steam img:hover{
     transform:scale(0.7875);
 }
 
-/* First hover permanently removes glow */
+/* First hover permanently kills the glow */
 .steam.glow-removed img{
     animation:none;
     filter:none;
@@ -424,7 +443,7 @@ function scaleGameEmbed(){
 }
 
 
-/* Scale game on page load and resize */
+/* Scale embedded game */
 window.addEventListener('load', scaleGameEmbed);
 window.addEventListener('resize', scaleGameEmbed);
 
@@ -435,12 +454,12 @@ const gameFrame = document.querySelector('.game-frame-wrap iframe');
 
 if(steamButton && gameFrame){
 
-    /* Start glow only after embedded game finishes loading */
+    /* Start glow after embedded game finishes loading */
     gameFrame.addEventListener('load', function(){
         steamButton.classList.add('glow-start');
     });
 
-    /* First hover removes glow permanently */
+    /* First hover permanently removes glow */
     steamButton.addEventListener('mouseenter', function(){
         steamButton.classList.remove('glow-start');
         steamButton.classList.add('glow-removed');
