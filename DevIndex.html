@@ -115,13 +115,37 @@ a{
     display:block;
     width:auto;
     height:auto;
+
     transform:scale(0.75);
     transform-origin:center;
-    transition:transform 0.15s ease;
+
+    /* Glow fades in on page load */
+    filter:drop-shadow(0 0 5px rgba(136, 194, 62, 1));
+    animation:steamGlowIn 0.5s ease forwards;
+
+    transition:
+        transform 0.15s ease,
+        filter 0.25s ease;
+}
+
+@keyframes steamGlowIn{
+    from{
+        filter:drop-shadow(0 0 0 rgba(136, 194, 62, 0));
+    }
+
+    to{
+        filter:drop-shadow(0 0 5px rgba(136, 194, 62, 1));
+    }
 }
 
 .steam img:hover{
     transform:scale(0.7875);
+}
+
+/* Glow is permanently removed after first hover */
+.steam.glow-removed img{
+    animation:none;
+    filter:none;
 }
 /* DESKTOP GAME FRAME */
 .game-frame-wrap{
@@ -388,6 +412,13 @@ function scaleGameEmbed(){
     box.style.transform = 'scale(' + scale + ')';
     box.style.height = (originalHeight * scale) + 'px';
     wrap.style.height = (originalHeight * scale) + 'px';
+
+const steamButton = document.querySelector('.steam');
+
+steamButton.addEventListener('mouseenter', function () {
+    steamButton.classList.add('glow-removed');
+}, { once: true });
+</script>
 }
 
 window.addEventListener('load', scaleGameEmbed);
