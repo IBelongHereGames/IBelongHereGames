@@ -119,30 +119,39 @@ a{
     transform:scale(0.75);
     transform-origin:center;
 
-    /* Glow fades in on page load */
-    filter:drop-shadow(0 0 5px rgba(136, 194, 62, 1));
-    animation:steamGlowIn 0.5s ease forwards;
+    /* No glow until the game iframe loads */
+    filter:none;
 
     transition:
         transform 0.15s ease,
         filter 0.25s ease;
 }
 
+/* Start glow after game iframe loads */
+.steam.glow-start img{
+    animation:steamGlowIn 0.5s ease forwards;
+}
+
 @keyframes steamGlowIn{
     from{
-        filter:drop-shadow(0 0 0 rgba(136, 194, 62, 0));
+        filter:
+            drop-shadow(0 0 0 rgba(136, 194, 62, 0))
+            drop-shadow(0 0 0 rgba(136, 194, 62, 0));
     }
 
     to{
-        filter:drop-shadow(0 0 5px rgba(136, 194, 62, 1));
+        filter:
+            drop-shadow(0 0 5px rgba(136, 194, 62, 1))
+            drop-shadow(0 0 10px rgba(136, 194, 62, 1));
     }
 }
 
+/* Button still grows 5% on hover */
 .steam img:hover{
     transform:scale(0.7875);
 }
 
-/* Glow is permanently removed after first hover */
+/* First hover permanently removes glow */
 .steam.glow-removed img{
     animation:none;
     filter:none;
@@ -412,15 +421,32 @@ function scaleGameEmbed(){
     box.style.transform = 'scale(' + scale + ')';
     box.style.height = (originalHeight * scale) + 'px';
     wrap.style.height = (originalHeight * scale) + 'px';
+}
 
-    window.addEventListener('load', scaleGameEmbed);
-    window.addEventListener('resize', scaleGameEmbed);
 
+/* Scale game on page load and resize */
+window.addEventListener('load', scaleGameEmbed);
+window.addEventListener('resize', scaleGameEmbed);
+
+
+/* Steam button glow */
 const steamButton = document.querySelector('.steam');
+const gameFrame = document.querySelector('.game-frame-wrap iframe');
 
-steamButton.addEventListener('mouseenter', function () {
-    steamButton.classList.add('glow-removed');
-}, { once: true });
+if(steamButton && gameFrame){
+
+    /* Start glow only after embedded game finishes loading */
+    gameFrame.addEventListener('load', function(){
+        steamButton.classList.add('glow-start');
+    });
+
+    /* First hover removes glow permanently */
+    steamButton.addEventListener('mouseenter', function(){
+        steamButton.classList.remove('glow-start');
+        steamButton.classList.add('glow-removed');
+    }, { once: true });
+
+}
 </script>
 }
 
