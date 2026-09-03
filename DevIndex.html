@@ -1,623 +1,410 @@
 <html lang="en">
 <head>
-
+    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>IBelongHere Games</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap" rel="stylesheet">
-
 <meta name="description" content="Farm crops, cook meals, automate machines, and feed a demanding giant in ImmaPotato, a quirky survival and automation sim.">
-
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ibelongheregames.github.io/IBelongHereGames/Index.html">
 <meta property="og:site_name" content="iBelongHere Games">
 <meta property="og:title" content="Wishlist ImmaPotato on Steam NOW!">
 <meta property="og:description" content="Farm crops, cook meals, automate machines, and feed a demanding giant in ImmaPotato, a quirky survival and automation sim.">
 <meta property="og:image" content="https://ibelongheregames.github.io/IBelongHereGames/Tcard.png">
-
+    
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://ibelongheregames.github.io/IBelongHereGames/Index.html">
 <meta name="twitter:title" content="Wishlist ImmaPotato on Steam NOW!">
 <meta name="twitter:description" content="Farm crops, cook meals, automate machines, and feed a demanding giant in ImmaPotato, a quirky survival and automation sim.">
 <meta name="twitter:image" content="https://ibelongheregames.github.io/IBelongHereGames/Tcard.png">
 
+    <style>
+*{margin:0;padding:0;box-sizing:border-box;}
 
-<style>
+        body{background-image:url('backdraft.png');background-size:cover;background-position:top center;background-repeat:no-repeat;background-color:#b139f2;}
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        .main-container{width:90%;max-width:1100px;margin:0 auto;padding-top:692px;text-align:center;}
 
-body{
-    background-image:url('backdraft.png');
-    background-size:cover;
-    background-position:top center;
-    background-repeat:no-repeat;
-    background-color:#b139f2;
-}
+        .content-column{width:60%;max-width:600px;margin:0 auto;padding-top:1000px;text-align:center;}
 
-.main-container{
-    width:90%;
-    max-width:1100px;
-    margin:0 auto;
-    padding-top:692px;
-    text-align:center;
-}
+        h1,h2{font-family:'Roboto',sans-serif;font-size:34px;font-weight:900;color:black;text-align:center;padding-bottom:30px;}
 
-.content-column{
-    width:60%;
-    max-width:600px;
-    margin:0 auto;
-    padding-top:1000px;
-    text-align:center;
-}
+        p{font-family:'Roboto',sans-serif;font-size:22px;font-weight:500;color:black;padding-bottom:30px;}
 
-h1, h2{
-    font-family:'Roboto',sans-serif;
-    font-size:34px;
-    font-weight:900;
-    color:black;
-    text-align:center;
-    padding-bottom:30px;
-}
+        a{font-family:'Roboto',sans-serif;font-size:22px;font-weight:500;color:black;}
 
-p{
-    font-family:'Roboto',sans-serif;
-    font-size:22px;
-    font-weight:500;
-    color:black;
-    padding-bottom:30px;
-}
+        .line{height:3px;background:black;border:none;}
 
-a{
-    font-family:'Roboto',sans-serif;
-    font-size:22px;
-    font-weight:500;
-    color:black;
-}
+        .custom-spacing{height:30px;}
 
-.line{
-    height:3px;
-    background:black;
-    border:none;
-}
+        .desktop-only{display:block;}
 
+        .mobile-only{display:none;}
 
-.custom-spacing{
-    height:30px;
-}
+        .desktop-game{position:absolute;top:750px;right:50px;z-index:10;}
 
-.desktop-only{
-    display:block;
-}
+        .steam{position:absolute;top:550px;right:340px;z-index:20;}
 
-.mobile-only{
-    display:none;
-}
+        .steam img{display:block;width:auto;height:auto;transform:scale(0.75);transform-origin:center;filter:none;transition:transform 0.15s ease,filter 0.25s ease;}
 
-.desktop-game{
-    position:absolute;
-    top:750px;
-    right:50px;
-    z-index:10;
-}
+        .steam.glow-start img{animation:steamGlowIn 0.5s ease forwards,steamGlowPulse 1s ease-in-out 0.5s infinite;}
 
-.steam{
-    position:absolute;
-    top:550px;
-    right:340px;
-    z-index:20;
-}
+        @keyframes steamGlowIn{from{filter:drop-shadow(0 0 0 rgba(136,194,62,0)) drop-shadow(0 0 0 rgba(136,194,62,0));}to{filter:drop-shadow(0 0 5px rgba(136,194,62,1)) drop-shadow(0 0 10px rgba(136,194,62,1));}}
 
-.steam img{
-    display:block;
-    width:auto;
-    height:auto;
+        @keyframes steamGlowPulse{0%,100%{filter:drop-shadow(0 0 4px rgba(136,194,62,0.65)) drop-shadow(0 0 8px rgba(136,194,62,0.65));}50%{filter:drop-shadow(0 0 7px rgba(136,194,62,1)) drop-shadow(0 0 14px rgba(136,194,62,1));}}
 
-    transform:scale(0.75);
-    transform-origin:center;
+        .steam img:hover{transform:scale(0.7875);}
 
-    filter:none;
+        .steam.glow-removed img{animation:none;filter:none;}
 
-    transition:
-        transform 0.15s ease,
-        filter 0.25s ease;
-}
+        .game-frame-wrap{width:980px;overflow:hidden;display:flex;justify-content:flex-end;}
 
-.steam.glow-start img{
-    animation:
-        steamGlowIn 0.5s ease forwards,
-        steamGlowPulse 1s ease-in-out 0.5s infinite;
-}
+        .game-scale-box{width:980px;height:640px;transform-origin:top center;}
 
-@keyframes steamGlowIn{
+        .game-scale-box iframe{width:980px;height:640px;border:0;display:block;}
 
-    from{
-        filter:
-            drop-shadow(0 0 0 rgba(136,194,62,0))
-            drop-shadow(0 0 0 rgba(136,194,62,0));
-    }
+        .mobile-hero{width:65%;max-width:600px;margin:0 auto;text-align:center;}
 
-    to{
-        filter:
-            drop-shadow(0 0 5px rgba(136,194,62,1))
-            drop-shadow(0 0 10px rgba(136,194,62,1));
-    }
-}
+        .mobile-hero img{width:100%;height:auto;display:block;margin:0 auto;}
 
-@keyframes steamGlowPulse{
+        .video-section{position:relative;width:100%;padding:15px;background:rgba(34,31,61,0.75);border:10px solid #88c23e;border-radius:25px;margin:30px auto 45px auto;transform:translateY(25px);opacity:0;transition:transform 0.7s ease-out,opacity 0.7s ease-out;box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);will-change:transform,opacity;}
 
-    0%,
-    100%{
-        filter:
-            drop-shadow(0 0 4px rgba(136,194,62,0.65))
-            drop-shadow(0 0 8px rgba(136,194,62,0.65));
-    }
+        .video-section.in-view{transform:translateY(0);opacity:1;}
 
-    50%{
-        filter:
-            drop-shadow(0 0 7px rgba(136,194,62,1))
-            drop-shadow(0 0 14px rgba(136,194,62,1));
-    }
-}
+        .video-section h2{color:white;}
 
-.steam img:hover{
-    transform:scale(0.7875);
-}
+        .video-section p{color:white;}
 
-.steam.glow-removed img{
-    animation:none;
-    filter:none;
-}
+        .video-section a{color:white;}
 
-.game-frame-wrap{
-    width:980px;
-    overflow:hidden;
-    display:flex;
-    justify-content:flex-end;
-}
+        .video-wrap{position:relative;width:100%;padding-bottom:56.25%;overflow:hidden;border-radius:12px;}
 
-.game-scale-box{
-    width:980px;
-    height:640px;
-    transform-origin:top center;
-}
+        .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
 
-.game-scale-box iframe{
-    width:980px;
-    height:640px;
-    border:0;
-    display:block;
-}
+        @media (max-width:700px){body{background-image:url('mediaback.png');background-size:cover;background-color:#b139f2;}.main-container{width:100%;padding-top:250px;}.desktop-only{display:none;}.mobile-only{display:block;}.content-column{width:65%;max-width:none;}h1,h2{font-size:24px;padding-bottom:15px;}p{font-size:17px;padding-bottom:15px;}a{font-size:17px;}.custom-spacing{height:15px;}.video-section{padding:15px;border-width:10px;border-radius:20px;margin:20px auto 35px auto;}}
 
-.mobile-hero{
-    width:65%;
-    max-width:600px;
-    margin:0 auto;
-    text-align:center;
-}
+    </style>
 
-.mobile-hero img{
-    width:100%;
-    height:auto;
-    display:block;
-    margin:0 auto;
-}
-
-.video-section{
-    position:relative;
-    width:100%;
-    padding:15px;
-    background:rgba(34,31,61,0.75);
-    border:10px solid #88c23e;
-    border-radius:25px;
-    margin:30px auto 45px auto;
-    transform:translateY(25px);
-    opacity:0;
-    transition:
-        transform 0.7s ease-out,
-        opacity 0.7s ease-out;
-    box-shadow:
-        0 10px 20px rgba(0,0,0,0.28),
-        0 20px 40px rgba(0,0,0,0.18);
-    will-change:transform, opacity;
-}
-
-.video-section.in-view{
-    transform:translateY(0);
-    opacity:1;
-}
-
-.video-section h2{
-    color:white;
-}
-
-.video-section p{
-    color:white;
-}
-
-.video-section a{
-    color:white;
-}
-
-.video-wrap{
-    position:relative;
-    width:100%;
-    padding-bottom:56.25%;
-    overflow:hidden;
-    border-radius:12px;
-}
-
-.video-wrap iframe{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    border:0;
-}
-
-
-/* MOBILE */
-
-@media (max-width:700px){
-
-    body{
-        background-image:url('mediaback.png');
-        background-size:cover;
-        background-color:#b139f2;
-    }
-
-    .main-container{
-        width:100%;
-        padding-top:250px;
-    }
-
-    .desktop-only{
-        display:none;
-    }
-
-    .mobile-only{
-        display:block;
-    }
-
-    .content-column{
-        width:65%;
-        max-width:none;
-    }
-
-    h1, h2{
-        font-size:24px;
-        padding-bottom:15px;
-    }
-
-    p{
-        font-size:17px;
-        padding-bottom:15px;
-    }
-
-    a{
-        font-size:17px;
-    }
-
-    .custom-spacing{
-        height:15px;
-    }
-
-    .video-section{
-        padding:15px;
-        border-width:10px;
-        border-radius:20px;
-
-        margin:20px auto 35px auto;
-    }
-}
-
-</style>
 </head>
 
-<body>
+    <body>
 
-<div class="desktop-only steam">
-    <a href="https://store.steampowered.com/app/4789360/Imma_Potato/"
-        target="_blank">
-        <img src="ImmaPotatoButton.png" alt="Steam">
-    </a>
+        <div class="desktop-only steam">
+
+            <a href="https://store.steampowered.com/app/4789360/Imma_Potato/" target="_blank">
+
+                <img src="ImmaPotatoButton.png" alt="Steam">
+</a>
 </div>
 
-<div class="desktop-only desktop-game">
-    <div class="game-frame-wrap">
-        <div class="game-scale-box" id="gameScaleBox">
-            <iframe src="https://itch.io/embed-upload/18850200?color=036201" allowfullscreen>
-            </iframe>
+        <div class="desktop-only desktop-game">
+
+            <div class="game-frame-wrap">
+
+                <div class="game-scale-box" id="gameScaleBox">
+
+                    <iframe src="https://itch.io/embed-upload/18850200?color=036201" allowfullscreen>
+
+                    </iframe>
+
+                </div>
+
+            </div>
+
         </div>
-    </div>
-</div>
 
-  <div class="main-container">
-  <div class="mobile-only">
-        <div class="mobile-hero">
-            <a href="https://russellyes.itch.io/immapotato" target="_blank">
-                <img src="LandingScreen.jpg" alt="Imma Potato">
-            </a>
+        <div class="main-container">
+
+            <div class="mobile-only">
+
+                <div class="mobile-hero">
+
+                    <a href="https://russellyes.itch.io/immapotato" target="_blank">
+
+                        <img src="LandingScreen.jpg" alt="Imma Potato">
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="custom-spacing">
+
+            </div>
+
+            <div class="content-column">
+
+                <h2>
+
+                    Links</h2>
+
+                <p>
+
+                    <a href="https://russellyes.itch.io/immapotato" target="_blank"> Imma Potato Now Play Testing!</a>
+
+                </p>
+
+                <p>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank"> Play Fight The Sun!</a>
+                
+                </p>
+
+                <p>
+
+                    <a href="https://github.com/RussellYes/FightTheSun" target="_blank"> Fight The Sun Github</a>
+
+                </p>
+
+                <p>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank"> Play Greed Monster!</a>
+
+                </p>
+
+                <p>
+
+                    <a href="https://www.youtube.com/@ibelonghere" target="_blank"> YouTube</a>
+
+                </p>
+
+                <p>
+
+                    <a href="mailto:ibelongheregames@gmail.com"> Email</a>
+
+                </p>
+
+                <hr class="line">
+
+                <div class="custom-spacing">
+
+                </div>
+
+                <section class="video-section">
+
+                    <h2>
+
+                        Imma Potato</h2>
+
+                    <p>
+
+                        Now Play Testing!</p>
+
+                    <div class="video-wrap">
+
+                        <iframe src="https://www.youtube.com/embed/7PKkQsQH5dc" allowfullscreen>
+
+                        </iframe>
+
+                    </div>
+
+                    <div class="custom-spacing">
+
+                    </div>
+
+                    <p>
+
+                        <a href="https://russellyes.itch.io/immapotato" target="_blank">
+
+                            Play Imma Potato - Now Play Testing!</a>
+
+                    </p>
+
+                </section>
+
+                <section class="video-section">
+
+                    <h2>
+
+                        Fight The Sun</h2>
+
+                    <p>
+
+                        August 2025</p>
+
+                    <div class="video-wrap">
+
+                        <iframe src="https://www.youtube.com/embed/bQFpz7cK5WA" allowfullscreen>
+
+                        </iframe>
+
+                    </div>
+
+                    <div class="custom-spacing">
+
+                    </div>
+
+                    <p>
+
+                        <a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank">
+
+                            Play Fight The Sun!</a>
+
+                    </p>
+
+                    <p>
+
+                        <a href="https://github.com/RussellYes/FightTheSun" target="_blank">
+
+                            Fight The Sun Github</a>
+
+                    </p>
+
+                </section>
+
+                <section class="video-section">
+
+                    <h2>
+
+                        Greed Monster</h2>
+
+                    <p>
+
+                        July 2023</p>
+
+                    <div class="video-wrap">
+
+                        <iframe src="https://www.youtube.com/embed/p1VTfJT-0FE?si=KnlYT2P8GHHjqX-3" allowfullscreen>
+
+                        </iframe>
+
+                    </div>
+
+                    <div class="custom-spacing">
+
+                    </div>
+
+                    <p>
+
+                        <a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank">
+
+                            Play Greed Monster!</a>
+
+                    </p>
+
+                </section>
+
+                <h2>
+
+                    Animation</h2>
+
+                <p>
+
+                    <a href="https://youtube.com/@ibelonghere" target="_blank">
+
+                        IBelongHere YouTube Channel</a>
+
+                </p>
+
+                <p>
+
+                    Notable videos:</p>
+
+                <section class="video-section">
+
+                    <h2>
+
+                        Canada's History</h2>
+
+                    <div class="video-wrap">
+
+                        <iframe src="https://www.youtube.com/embed/n9_2jFf3EeI?si=h9I_-ZinLqKLh0c5" allowfullscreen>
+
+                        </iframe>
+
+                    </div>
+
+                </section>
+
+                <section class="video-section">
+
+                    <h2>
+
+                        Tool Fairy</h2>
+
+                    <div class="video-wrap">
+
+                        <iframe src="https://www.youtube.com/embed/WV7oOXrKO2w?si=B4BqTyrkdwOZkkS5" allowfullscreen>
+
+                        </iframe>
+
+                    </div>
+
+                </section>
+
+                <section class="video-section">
+
+                    <h2>
+
+                        Prisoner's Dilemma</h2>
+
+                    <div class="video-wrap">
+
+                        <iframe src="https://www.youtube.com/embed/V79joYwDH1s?si=s5pYHBXXlmlQVkS9" allowfullscreen>
+
+                        </iframe>
+
+                    </div>
+
+                </section>
+
+                <section class="video-section">
+
+                    <h2>
+
+                        TerraMike Horse</h2>
+
+                    <div class="video-wrap">
+
+                        <iframe src="https://www.youtube.com/embed/nA2FjmwYCEo?si=lgIZLutweCF_Nx92" allowfullscreen>
+
+                        </iframe>
+
+                    </div>
+
+                </section>
+
+                <div class="custom-spacing">
+
+                </div>
+
+                <h2>
+
+                    Contact</h2>
+
+                <p>
+
+                    <a href="mailto:ibelongheregames@gmail.com">
+
+                        Email</a>
+
+                </p>
+
+            </div>
+
         </div>
-    </div>
 
-    <div class="custom-spacing"></div>
-    <div class="content-column">
- <h2>Links</h2>
-        <p>
-            <a href="https://russellyes.itch.io/immapotato" target="_blank">
-                Imma Potato Now Play Testing!
-            </a>
-        </p>
-        <p>
-            <a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank">
-                Play Fight The Sun!
-            </a>
-        </p>
-        <p>
-            <a href="https://github.com/RussellYes/FightTheSun" target="_blank">
-                Fight The Sun Github
-            </a>
-        </p>
-        <p>
-            <a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank">
-                Play Greed Monster!
-            </a>
-        </p>
-        <p>
-            <a href="https://www.youtube.com/@ibelonghere" target="_blank">
-                YouTube
-            </a>
-        </p>
-        <p>
-            <a href="mailto:ibelongheregames@gmail.com"> Email
-            </a>
-        </p>
-      
-        <hr class="line">
-        <div class="custom-spacing"></div>
+        <script>
 
-        <section class="video-section">
-            <h2>Imma Potato</h2>
-            <p>Now Play Testing!</p>
-            <div class="video-wrap">
-                <iframe
-                    src="https://www.youtube.com/embed/7PKkQsQH5dc"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div class="custom-spacing"></div>
-            <p>
-                <a href="https://russellyes.itch.io/immapotato" target="_blank">
-                    Play Imma Potato - Now Play Testing!
-                </a>
-            </p>
-        </section>
+            function scaleGameEmbed(){const wrap=document.querySelector('.game-frame-wrap');const box=document.getElementById('gameScaleBox');if(!wrap||!box){return;}const originalWidth=980;const originalHeight=640;const availableWidth=wrap.clientWidth;const scale=Math.min(1,availableWidth/originalWidth);box.style.transform='scale('+scale+')';box.style.height=(originalHeight*scale)+'px';wrap.style.height=(originalHeight*scale)+'px';}
 
-      <section class="video-section">
-            <h2>Fight The Sun</h2>
-            <p>August 2025</p>
-            <div class="video-wrap">
-                <iframe
-                    src="https://www.youtube.com/embed/bQFpz7cK5WA"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div class="custom-spacing"></div>
-            <p>
-                <a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank">
-                    Play Fight The Sun!
-                </a>
-            </p>
-            <p>
-                <a href="https://github.com/RussellYes/FightTheSun" target="_blank">
-                    Fight The Sun Github
-                </a>
-            </p>
-        </section>
+            window.addEventListener('load',scaleGameEmbed);
 
-      <section class="video-section">
-            <h2>Greed Monster</h2>
-            <p>July 2023</p>
-            <div class="video-wrap">
-                <iframe
-                    src="https://www.youtube.com/embed/p1VTfJT-0FE?si=KnlYT2P8GHHjqX-3"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div class="custom-spacing"></div>
-            <p>
-                <a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank">
-                    Play Greed Monster!
-                </a>
-            </p>
-        </section>
+            window.addEventListener('resize',scaleGameEmbed);
 
-      <h2>Animation</h2>
-        <p>
-            <a href="https://youtube.com/@ibelonghere" target="_blank">
-                IBelongHere YouTube Channel
-            </a>
-        </p>
+            const steamButton=document.querySelector('.steam');
 
-        <p>Notable videos:</p>
-        <section class="video-section">
-            <h2>Canada's History</h2>
-            <div class="video-wrap">
-                <iframe
-                    src="https://www.youtube.com/embed/n9_2jFf3EeI?si=h9I_-ZinLqKLh0c5"
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </section>
+            const gameFrame=document.querySelector('.game-frame-wrap iframe');
 
-        <section class="video-section">
-            <h2>Tool Fairy</h2>
-            <div class="video-wrap">
-                <iframe
-                    src="https://www.youtube.com/embed/WV7oOXrKO2w?si=B4BqTyrkdwOZkkS5"
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </section>
+            if(steamButton&&gameFrame){gameFrame.addEventListener('load',function(){steamButton.classList.add('glow-start');});steamButton.addEventListener('mouseenter',function(){steamButton.classList.remove('glow-start');steamButton.classList.add('glow-removed');},{once:true});}
 
-        <section class="video-section">
-            <h2>Prisoner's Dilemma</h2>
-            <div class="video-wrap">
-                <iframe
-                    src="https://www.youtube.com/embed/V79joYwDH1s?si=s5pYHBXXlmlQVkS9"
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </section>
+            const videoSections=document.querySelectorAll('.video-section');
 
-        <section class="video-section">
-            <h2>TerraMike Horse</h2>
-            <div class="video-wrap">
-                <iframe
-                    src="https://www.youtube.com/embed/nA2FjmwYCEo?si=lgIZLutweCF_Nx92"
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </section>
+            const videoObserver=new IntersectionObserver(function(entries,observer){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target);}});},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
 
-        <div class="custom-spacing"></div>
-        <h2>Contact</h2>
-        <p>
-            <a href="mailto:ibelongheregames@gmail.com">
-                Email
-            </a>
-        </p>
-    </div>
-</div>
-
-<script>
-function scaleGameEmbed(){
-    const wrap =
-        document.querySelector('.game-frame-wrap');
-    const box =
-        document.getElementById('gameScaleBox');
-    if(!wrap || !box){
-        return;
-    }
-
-    const originalWidth = 980;
-    const originalHeight = 640;
-    const availableWidth =
-        wrap.clientWidth;
-
-    const scale =
-        Math.min(
-            1,
-            availableWidth / originalWidth
-        );
-
-    box.style.transform =
-        'scale(' + scale + ')';
-
-    box.style.height =
-        (originalHeight * scale) + 'px';
-
-    wrap.style.height =
-        (originalHeight * scale) + 'px';
-}
-
-window.addEventListener(
-    'load',
-    scaleGameEmbed
-);
-
-window.addEventListener(
-    'resize',
-    scaleGameEmbed
-);
-
-const steamButton =
-    document.querySelector('.steam');
-
-const gameFrame =
-    document.querySelector(
-        '.game-frame-wrap iframe'
-    );
-
-if(steamButton && gameFrame){
-
-    gameFrame.addEventListener(
-        'load',
-        function(){
-
-            steamButton.classList.add(
-                'glow-start'
-            );
-        }
-    );
-
-    steamButton.addEventListener(
-        'mouseenter',
-        function(){
-
-            steamButton.classList.remove(
-                'glow-start'
-            );
-
-            steamButton.classList.add(
-                'glow-removed'
-            );
-        },
-      
-        {
-            once:true
-        }
-    );
-}
-
-const videoSections =
-    document.querySelectorAll(
-        '.video-section'
-    );
-
-const videoObserver =
-    new IntersectionObserver(
-
-        function(entries, observer){
-
-            entries.forEach(
-                function(entry){
-
-                    if(entry.isIntersecting){
-
-                        entry.target.classList.add(
-                            'in-view'
-                        );
-
-                        observer.unobserve(
-                            entry.target
-                        );
-                    }
-                }
-            );
-        },
-
-        {
-            threshold:0.15,
-            rootMargin:
-                '0px 0px -40px 0px'
-        }
-    );
-
-videoSections.forEach(
-    function(section){
-        videoObserver.observe(
-            section
-        );
-    }
-);
+            videoSections.forEach(function(section){videoObserver.observe(section);});
 </script>
-
 </body>
 </html>
