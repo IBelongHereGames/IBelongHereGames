@@ -49,35 +49,9 @@ a{font-family:'Sora',sans-serif;font-size:22px;font-weight:400;color:#97c94c;}
 .desktop-game{position:absolute;top:750px;right:50px;z-index:10;}
 .steam{position:absolute;top:550px;right:340px;z-index:20;}
 .steam img{display:block;width:auto;height:auto;transform:scale(0.75);transform-origin:center;filter:none;transition:transform 0.15s ease,filter 0.25s ease;}
-.steam.glow-start img{
-    animation:steamGlowIn 0.5s ease forwards,steamGlowPulse 1s ease-in-out 0.5s infinite;
-}
-
-@keyframes steamGlowIn{
-    from{
-        filter:
-            drop-shadow(0 0 0 rgba(151,201,76,0))
-            drop-shadow(0 0 0 rgba(151,201,76,0));
-    }
-    to{
-        filter:
-            drop-shadow(0 0 5px rgba(151,201,76,1))
-            drop-shadow(0 0 10px rgba(151,201,76,1));
-    }
-}
-
-@keyframes steamGlowPulse{
-    0%,100%{
-        filter:
-            drop-shadow(0 0 4px rgba(151,201,76,0.65))
-            drop-shadow(0 0 8px rgba(151,201,76,0.65));
-    }
-    50%{
-        filter:
-            drop-shadow(0 0 7px rgba(151,201,76,1))
-            drop-shadow(0 0 14px rgba(151,201,76,1));
-    }
-}
+.steam.glow-start img{animation:steamGlowIn 0.5s ease forwards,steamGlowPulse 1s ease-in-out 0.5s infinite;}
+@keyframes steamGlowIn{from{filter:drop-shadow(0 0 0 rgba(151,201,76,0)) drop-shadow(0 0 0 rgba(151,201,76,0));}to{filter:drop-shadow(0 0 5px rgba(151,201,76,1)) drop-shadow(0 0 10px rgba(151,201,76,1));}}
+@keyframes steamGlowPulse{0%,100%{filter:drop-shadow(0 0 4px rgba(151,201,76,0.65)) drop-shadow(0 0 8px rgba(151,201,76,0.65));}50%{filter:drop-shadow(0 0 7px rgba(151,201,76,1)) drop-shadow(0 0 14px rgba(151,201,76,1));}}
 .steam img:hover{transform:scale(0.7875);}
 .steam.glow-removed img{animation:none;filter:none;}
 .game-frame-wrap{width:980px;overflow:hidden;display:flex;justify-content:flex-end;}
@@ -85,14 +59,22 @@ a{font-family:'Sora',sans-serif;font-size:22px;font-weight:400;color:#97c94c;}
 .game-scale-box iframe{width:980px;height:640px;border:0;display:block;}
 .mobile-hero{width:65%;max-width:600px;margin:0 auto;text-align:center;}
 .mobile-hero img{width:100%;height:auto;display:block;margin:0 auto;}
+.links-section{width:850px;max-width:calc(100vw - 40px);margin:30px 0 45px 50%;transform:translateX(-50%);padding:25px;background:rgba(34,31,61,0.75);border:10px solid #97c94c;border-radius:25px;box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);}
+.links-section h2{font-family:'Sora',sans-serif;font-size:34px;font-weight:625;color:#97c94c;text-align:center;padding-bottom:25px;}
+.links-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px;justify-items:center;align-items:center;}
+.links-grid a{display:flex;align-items:center;justify-content:center;text-decoration:none;}
+.links-grid img{display:block;object-fit:cover;transition:transform 0.15s ease;}
+.links-grid img:hover{transform:scale(1.05);}
+.links-grid a:nth-child(-n+4) img{width:400px;height:200px;max-width:100%;}
+.links-grid a:nth-child(n+5) img{width:250px;height:250px;max-width:100%;}
 .video-section{position:relative;width:100%;padding:15px;background:rgba(34,31,61,0.75);border:10px solid #97c94c;border-radius:25px;margin:30px auto 45px auto;transform:translateY(25px);opacity:0;transition:transform 0.7s ease-out,opacity 0.7s ease-out;box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);will-change:transform,opacity;}
-  .video-section.in-view{transform:translateY(0);opacity:1;}
+.video-section.in-view{transform:translateY(0);opacity:1;}
 .video-section h2{color:#97c94c;}
 .video-section p{color:#97c94c;}
 .video-section a{color:#97c94c;}
 .video-wrap{position:relative;width:100%;padding-bottom:56.25%;overflow:hidden;border-radius:12px;}
 .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
-@media (max-width:700px){body{background-image:url('mediaback.png');background-size:cover;background-color:#b139f2;font-family:'Sora',sans-serif;color:#97c94c;}.main-container{width:100%;padding-top:250px;}.desktop-only{display:none;}.mobile-only{display:block;}.content-column{width:65%;max-width:none;}h1,h2{font-family:'Sora',sans-serif;font-size:24px;font-weight:625;color:#97c94c;padding-bottom:15px;}p{font-family:'Sora',sans-serif;font-size:17px;font-weight:400;color:#97c94c;padding-bottom:15px;}a{font-family:'Sora',sans-serif;font-size:17px;font-weight:400;color:#97c94c;}.custom-spacing{height:15px;}.video-section{padding:15px;border-width:10px;border-radius:20px;margin:20px auto 35px auto;}}
+@media (max-width:700px){body{background-image:url('mediaback.png');background-size:cover;background-color:#b139f2;font-family:'Sora',sans-serif;color:#97c94c;}.main-container{width:100%;padding-top:250px;}.desktop-only{display:none;}.mobile-only{display:block;}.content-column{width:65%;max-width:none;}h1,h2{font-family:'Sora',sans-serif;font-size:24px;font-weight:625;color:#97c94c;padding-bottom:15px;}p{font-family:'Sora',sans-serif;font-size:17px;font-weight:400;color:#97c94c;padding-bottom:15px;}a{font-family:'Sora',sans-serif;font-size:17px;font-weight:400;color:#97c94c;}.custom-spacing{height:15px;}.links-section{width:90%;max-width:none;padding:15px;border-width:10px;border-radius:20px;margin:20px 0 35px 50%;}.links-section h2{font-size:24px;font-weight:625;padding-bottom:15px;}.links-grid{grid-template-columns:repeat(2,1fr);gap:15px;}.links-grid a:nth-child(-n+4) img{width:100%;height:auto;aspect-ratio:2/1;}.links-grid a:nth-child(n+5) img{width:100%;height:auto;aspect-ratio:1/1;}.video-section{padding:15px;border-width:10px;border-radius:20px;margin:20px auto 35px auto;}}
 </style>
 
 </head>
@@ -147,73 +129,81 @@ a{font-family:'Sora',sans-serif;font-size:22px;font-weight:400;color:#97c94c;}
 
 <div class="content-column">
 
-<h2>
+<section class="links-section">
 
-Links</h2>
+<h2>Links</h2>
 
-<p>
+<div class="links-grid">
 
-<a href="https://russellyes.itch.io/immapotato" target="_blank">
+<a href="LINK-1-HERE" target="_blank">
 
-Imma Potato Now Play Testing!</a>
+<img src="IMAGE-1.jpg" alt="Link 1">
 
-</p>
+</a>
 
-<p>
+<a href="LINK-2-HERE" target="_blank">
 
-<a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank">
+<img src="IMAGE-2.jpg" alt="Link 2">
 
-Play Fight The Sun!</a>
+</a>
 
-</p>
+<a href="LINK-3-HERE" target="_blank">
 
-<p>
+<img src="IMAGE-3.jpg" alt="Link 3">
 
-<a href="https://github.com/RussellYes/FightTheSun" target="_blank">
+</a>
 
-Fight The Sun Github</a>
+<a href="LINK-4-HERE" target="_blank">
 
-</p>
+<img src="IMAGE-4.jpg" alt="Link 4">
 
-<p>
+</a>
 
-<a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank">
+<a href="LINK-5-HERE" target="_blank">
 
-Play Greed Monster!</a>
+<img src="IMAGE-5.jpg" alt="Link 5">
 
-</p>
+</a>
 
-<p>
+<a href="LINK-6-HERE" target="_blank">
 
-<a href="https://www.youtube.com/@ibelonghere" target="_blank">
+<img src="IMAGE-6.jpg" alt="Link 6">
 
-YouTube</a>
+</a>
 
-</p>
+<a href="LINK-7-HERE" target="_blank">
 
-<p>
+<img src="IMAGE-7.jpg" alt="Link 7">
 
-<a href="mailto:ibelongheregames@gmail.com">
+</a>
 
-Email</a>
+<a href="LINK-8-HERE" target="_blank">
 
-</p>
+<img src="IMAGE-8.jpg" alt="Link 8">
 
-<hr class="line">
+</a>
 
-<div class="custom-spacing">
+<a href="LINK-9-HERE" target="_blank">
+
+<img src="IMAGE-9.jpg" alt="Link 9">
+
+</a>
+
+<a href="mailto:EMAIL-ADDRESS-HERE">
+
+<img src="IMAGE-10.jpg" alt="Email">
+
+</a>
 
 </div>
 
+</section>
+
 <section class="video-section">
 
-<h2>
+<h2>Imma Potato</h2>
 
-Imma Potato</h2>
-
-<p>
-
-Now Play Testing!</p>
+<p>Now Play Testing!</p>
 
 <div class="video-wrap">
 
@@ -229,9 +219,7 @@ Now Play Testing!</p>
 
 <p>
 
-<a href="https://russellyes.itch.io/immapotato" target="_blank">
-
-Play Imma Potato - Now Play Testing!</a>
+<a href="https://russellyes.itch.io/immapotato" target="_blank">Play Imma Potato - Now Play Testing!</a>
 
 </p>
 
@@ -239,13 +227,9 @@ Play Imma Potato - Now Play Testing!</a>
 
 <section class="video-section">
 
-<h2>
+<h2>Fight The Sun</h2>
 
-Fight The Sun</h2>
-
-<p>
-
-August 2025</p>
+<p>August 2025</p>
 
 <div class="video-wrap">
 
@@ -261,17 +245,13 @@ August 2025</p>
 
 <p>
 
-<a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank">
-
-Play Fight The Sun!</a>
+<a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.FightTheSun" target="_blank">Play Fight The Sun!</a>
 
 </p>
 
 <p>
 
-<a href="https://github.com/RussellYes/FightTheSun" target="_blank">
-
-Fight The Sun Github</a>
+<a href="https://github.com/RussellYes/FightTheSun" target="_blank">Fight The Sun Github</a>
 
 </p>
 
@@ -279,13 +259,9 @@ Fight The Sun Github</a>
 
 <section class="video-section">
 
-<h2>
+<h2>Greed Monster</h2>
 
-Greed Monster</h2>
-
-<p>
-
-July 2023</p>
+<p>July 2023</p>
 
 <div class="video-wrap">
 
@@ -301,35 +277,25 @@ July 2023</p>
 
 <p>
 
-<a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank">
-
-Play Greed Monster!</a>
+<a href="https://play.google.com/store/apps/details?id=com.IBelongHereGames.GreedMonster1" target="_blank">Play Greed Monster!</a>
 
 </p>
 
 </section>
 
-<h2>
-
-Animation</h2>
+<h2>Animation</h2>
 
 <p>
 
-<a href="https://youtube.com/@ibelonghere" target="_blank">
-
-IBelongHere YouTube Channel</a>
+<a href="https://youtube.com/@ibelonghere" target="_blank">IBelongHere YouTube Channel</a>
 
 </p>
 
-<p>
-
-Notable videos:</p>
+<p>Notable videos:</p>
 
 <section class="video-section">
 
-<h2>
-
-Canada's History</h2>
+<h2>Canada's History</h2>
 
 <div class="video-wrap">
 
@@ -343,9 +309,7 @@ Canada's History</h2>
 
 <section class="video-section">
 
-<h2>
-
-Tool Fairy</h2>
+<h2>Tool Fairy</h2>
 
 <div class="video-wrap">
 
@@ -359,9 +323,7 @@ Tool Fairy</h2>
 
 <section class="video-section">
 
-<h2>
-
-Prisoner's Dilemma</h2>
+<h2>Prisoner's Dilemma</h2>
 
 <div class="video-wrap">
 
@@ -375,9 +337,7 @@ Prisoner's Dilemma</h2>
 
 <section class="video-section">
 
-<h2>
-
-TerraMike Horse</h2>
+<h2>TerraMike Horse</h2>
 
 <div class="video-wrap">
 
@@ -393,15 +353,11 @@ TerraMike Horse</h2>
 
 </div>
 
-<h2>
-
-Contact</h2>
+<h2>Contact</h2>
 
 <p>
 
-<a href="mailto:ibelongheregames@gmail.com">
-
-Email</a>
+<a href="mailto:ibelongheregames@gmail.com">Email</a>
 
 </p>
 
