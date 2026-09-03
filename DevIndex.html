@@ -49,9 +49,35 @@ a{font-family:'Sora',sans-serif;font-size:22px;font-weight:400;color:#97c94c;}
 .desktop-game{position:absolute;top:750px;right:50px;z-index:10;}
 .steam{position:absolute;top:550px;right:340px;z-index:20;}
 .steam img{display:block;width:auto;height:auto;transform:scale(0.75);transform-origin:center;filter:none;transition:transform 0.15s ease,filter 0.25s ease;}
-.steam.glow-start img{animation:steamGlowIn 0.5s ease forwards,steamGlowPulse 1s ease-in-out 0.5s infinite;}
-@keyframes steamGlowIn{from{filter:drop-shadow(0 0 0 rgba(136,194,62,0)) drop-shadow(0 0 0 rgba(136,194,62,0));}to{filter:drop-shadow(0 0 5px rgba(136,194,62,1)) drop-shadow(0 0 10px rgba(136,194,62,1));}}
-@keyframes steamGlowPulse{0%,100%{filter:drop-shadow(0 0 4px rgba(136,194,62,0.65)) drop-shadow(0 0 8px rgba(136,194,62,0.65));}50%{filter:drop-shadow(0 0 7px rgba(136,194,62,1)) drop-shadow(0 0 14px rgba(136,194,62,1));}}
+.steam.glow-start img{
+    animation:steamGlowIn 0.5s ease forwards,steamGlowPulse 1s ease-in-out 0.5s infinite;
+}
+
+@keyframes steamGlowIn{
+    from{
+        filter:
+            drop-shadow(0 0 0 rgba(151,201,76,0))
+            drop-shadow(0 0 0 rgba(151,201,76,0));
+    }
+    to{
+        filter:
+            drop-shadow(0 0 5px rgba(151,201,76,1))
+            drop-shadow(0 0 10px rgba(151,201,76,1));
+    }
+}
+
+@keyframes steamGlowPulse{
+    0%,100%{
+        filter:
+            drop-shadow(0 0 4px rgba(151,201,76,0.65))
+            drop-shadow(0 0 8px rgba(151,201,76,0.65));
+    }
+    50%{
+        filter:
+            drop-shadow(0 0 7px rgba(151,201,76,1))
+            drop-shadow(0 0 14px rgba(151,201,76,1));
+    }
+}
 .steam img:hover{transform:scale(0.7875);}
 .steam.glow-removed img{animation:none;filter:none;}
 .game-frame-wrap{width:980px;overflow:hidden;display:flex;justify-content:flex-end;}
@@ -59,8 +85,8 @@ a{font-family:'Sora',sans-serif;font-size:22px;font-weight:400;color:#97c94c;}
 .game-scale-box iframe{width:980px;height:640px;border:0;display:block;}
 .mobile-hero{width:65%;max-width:600px;margin:0 auto;text-align:center;}
 .mobile-hero img{width:100%;height:auto;display:block;margin:0 auto;}
-.video-section{position:relative;width:100%;padding:15px;background:rgba(34,31,61,0.75);border:10px solid #88c23e;border-radius:25px;margin:30px auto 45px auto;transform:translateY(25px);opacity:0;transition:transform 0.7s ease-out,opacity 0.7s ease-out;box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);will-change:transform,opacity;}
-.video-section.in-view{transform:translateY(0);opacity:1;}
+.video-section{position:relative;width:100%;padding:15px;background:rgba(34,31,61,0.75);border:10px solid #97c94c;border-radius:25px;margin:30px auto 45px auto;transform:translateY(25px);opacity:0;transition:transform 0.7s ease-out,opacity 0.7s ease-out;box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);will-change:transform,opacity;}
+  .video-section.in-view{transform:translateY(0);opacity:1;}
 .video-section h2{color:#97c94c;}
 .video-section p{color:#97c94c;}
 .video-section a{color:#97c94c;}
@@ -77,7 +103,7 @@ a{font-family:'Sora',sans-serif;font-size:22px;font-weight:400;color:#97c94c;}
 
 <a href="https://store.steampowered.com/app/4789360/Imma_Potato/" target="_blank">
 
-<img src="SteamButton.png" alt="Steam">
+<img src="SteamButton.jpg" alt="Steam">
 
 </a>
 
