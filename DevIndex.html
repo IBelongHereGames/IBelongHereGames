@@ -47,15 +47,46 @@ a{font-family:'Sora',sans-serif;font-size:22px;font-weight:400;color:#97c94c;}
 .custom-spacing{height:30px;}
 .desktop-only{display:block;}
 .mobile-only{display:none;}
-.desktop-game{position:absolute;top:53vw;right:10%;z-index:10;transform:translateY(25px);
+  .game-cluster{
+position:absolute;
+top:53vw;
+right:10%;
+display:flex;
+align-items:flex-start;
+gap:25px;
+z-index:10;
+transform:translateY(25px);
 opacity:0;
 transition:transform 0.7s ease-out,opacity 0.7s ease-out;
 will-change:transform,opacity;
 }
 
-.desktop-game.in-view{
+.game-cluster.in-view{
 transform:translateY(0);
 opacity:1;
+}
+.desktop-game{
+position:relative;
+top:auto;
+right:auto;
+}
+
+.potato-card{
+position:relative;
+top:5vw;
+width:200px;
+padding:15px;
+background:rgba(34,31,61,0.75);
+border:10px solid #97c94c;
+border-radius:25px;
+box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);
+flex-shrink:0;
+}
+  .potato-card img{
+display:block;
+width:100%;
+height:auto;
+border-radius:12px;
 }
 .steam{position:absolute;top:35vw;right:25%;z-index:20;}
 .steam img{display:block;width:auto;height:auto;transform:scale(1.5);transform-origin:center;filter:none;transition:transform 0.15s ease,filter 0.25s ease;}
@@ -139,7 +170,15 @@ a{font-family:'Sora',sans-serif;font-size:17px;font-weight:400;color:#97c94c;}
 
 </div>
 
-<div class="desktop-only desktop-game">
+<div class="desktop-only game-cluster">
+
+<div class="potato-card">
+
+<img src="Potato.gif" alt="Potato">
+
+</div>
+
+<div class="desktop-game">
 
 <div class="game-frame-wrap">
 
@@ -148,6 +187,8 @@ a{font-family:'Sora',sans-serif;font-size:17px;font-weight:400;color:#97c94c;}
 <iframe src="https://itch.io/embed-upload/18850200?color=036201" allowfullscreen>
 
 </iframe>
+
+</div>
 
 </div>
 
@@ -412,7 +453,7 @@ window.addEventListener('resize',scaleGameEmbed);
 const steamButton=document.querySelector('.steam');
 const gameFrame=document.querySelector('.game-frame-wrap iframe');
 if(steamButton&&gameFrame){gameFrame.addEventListener('load',function(){steamButton.classList.add('glow-start');});steamButton.addEventListener('mouseenter',function(){steamButton.classList.remove('glow-start');steamButton.classList.add('glow-removed');},{once:true});}
-const scrollSections=document.querySelectorAll('.video-section,.links-section,.section-intro,.desktop-game');
+const scrollSections=document.querySelectorAll('.video-section,.links-section,.section-intro,.game-cluster');
 const scrollObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('in-view');}else{entry.target.classList.remove('in-view');}});},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
 scrollSections.forEach(function(section){scrollObserver.observe(section);});
 </script>
