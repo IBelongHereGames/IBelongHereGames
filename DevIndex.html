@@ -59,32 +59,62 @@ a{font-family:'Sora',sans-serif;font-size:22px;font-weight:400;color:#97c94c;}
 
 .mobile-game{display:none;}
 
-.potato-card{position:relative;top:13vw;width:200px;padding:15px;background:rgba(34,31,61,0.75);border:10px solid #97c94c;border-radius:25px;box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);flex-shrink:0;}
+.potato-card{
+position:relative;
+top:13vw;
+width:15.625vw;
+padding:1.171875vw;
+background:rgba(34,31,61,0.75);
+border:0.78125vw solid #97c94c;
+border-radius:1.953125vw;
+box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);
+flex-shrink:0;
+}
 
 .potato-card img{display:block;width:100%;height:auto;border-radius:12px;}
 
-.steam{position:absolute;top:35vw;right:25%;z-index:20;transform:translateY(25px);opacity:0;transition:transform 0.7s ease-out,opacity 0.7s ease-out;}
+.steam{position:absolute;top:35vw;right:25%;width:46.875vw;z-index:20;transform:translateY(25px);opacity:0;transition:transform 0.7s ease-out,opacity 0.7s ease-out;}
 
 .steam.in-view{transform:translateY(0);opacity:1;}
 
-.steam img{display:block;width:auto;height:auto;transform:scale(1.5);transform-origin:center;filter:none;transition:transform 0.15s ease,filter 0.25s ease;}
+.steam img{display:block;width:100%;height:auto;transform:none;transform-origin:center;filter:none;transition:transform 0.15s ease,filter 0.25s ease;}
 
+.steam img:hover{transform:scale(1.10);}
 .steam.glow-start img{animation:steamGlowIn 0.5s ease forwards,steamGlowPulse 1s ease-in-out 0.5s infinite;}
 
 @keyframes steamGlowIn{from{filter:drop-shadow(0 0 0 rgba(151,201,76,0)) drop-shadow(0 0 0 rgba(151,201,76,0));}to{filter:drop-shadow(0 0 5px rgba(151,201,76,1)) drop-shadow(0 0 10px rgba(151,201,76,1));}}
 
 @keyframes steamGlowPulse{0%,100%{filter:drop-shadow(0 0 4px rgba(151,201,76,0.65)) drop-shadow(0 0 8px rgba(151,201,76,0.65));}50%{filter:drop-shadow(0 0 7px rgba(151,201,76,1)) drop-shadow(0 0 14px rgba(151,201,76,1));}}
 
-.steam img:hover{transform:scale(1.65);}
+
 
 .steam.glow-removed img{animation:none;filter:none;}
 
-.game-frame-wrap{width:980px;overflow:hidden;display:flex;justify-content:flex-end;background:rgba(34,31,61,0.75);border:10px solid #97c94c;border-radius:25px;box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);}
+Use:
 
-.game-scale-box{width:980px;aspect-ratio:980 / 640;height:auto;transform-origin:top center;}
+.game-frame-wrap{
+width:76.5625vw;
+overflow:hidden;
+display:flex;
+justify-content:flex-end;
+background:rgba(34,31,61,0.75);
+border:0.78125vw solid #97c94c;
+border-radius:1.953125vw;
+box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);
+}
 
-.game-scale-box iframe{width:100%;height:100%;border:0;display:block;}
+.game-scale-box{
+width:76.5625vw;
+height:50vw;
+transform-origin:top center;
+}
 
+.game-scale-box iframe{
+width:100%;
+height:100%;
+border:0;
+display:block;
+}
 .links-section,.video-section{position:relative;width:100%;padding:25px;background:rgba(34,31,61,0.75);border:10px solid #97c94c;border-radius:25px;margin:30px auto 45px auto;transform:translateY(25px);opacity:0;transition:transform 0.7s ease-out,opacity 0.7s ease-out;box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);will-change:transform,opacity;}
 
 .links-section.in-view,.video-section.in-view{transform:translateY(0);opacity:1;}
@@ -144,8 +174,6 @@ body{background-image:url('backdraft2.png');background-size:100% auto;background
 .mobile-game a{display:block;width:100%;}
 
 .mobile-game img{display:block;width:100%;height:auto;border:10px solid #97c94c;border-radius:25px;box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);}
-
-.potato-card{width:15.625vw;padding:1.171875vw;border-width:0.78125vw;border-radius:1.953125vw;}
 
 .potato-card img{border-radius:0.9375vw;}
 
@@ -460,11 +488,6 @@ a{font-family:'Sora',sans-serif;font-size:17px;font-weight:400;color:#97c94c;}
 </div>
 
 <script>
-function scaleGameEmbed(){const wrap=document.querySelector('.game-frame-wrap');const box=document.getElementById('gameScaleBox');if(!wrap||!box)return;const originalWidth=980;const originalHeight=640;const availableWidth=wrap.clientWidth;const scale=Math.min(1,availableWidth/originalWidth);box.style.transform='scale('+scale+')';box.style.height=(originalHeight*scale)+'px';wrap.style.height=(originalHeight*scale)+'px';}
-
-window.addEventListener('load',scaleGameEmbed);
-
-window.addEventListener('resize',scaleGameEmbed);
 
 const steamButton=document.querySelector('.steam');
 
