@@ -34,8 +34,10 @@
 
 <meta name="twitter:image" content="https://ibelongheregames.github.io/IBelongHereGames/Tcard.png">
 
-  <link rel="preload" as="image" href="backdraft2.png">
-  
+<link rel="preload" as="image" href="backdraft2.png">
+
+<link rel="preload" as="image" href="steamCapsule.jpg" media="(max-width:700px)">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 html{width:100%;overflow-x:hidden;}
@@ -49,120 +51,133 @@ a{font-family:'Sora',sans-serif;font-size:22px;font-weight:400;color:#97c94c;}
 .custom-spacing{height:30px;}
 .desktop-only{display:block;}
 .mobile-only{display:none;}
-  .game-cluster{
-position:absolute;
-top:53vw;
-right:10%;
-display:flex;
-align-items:flex-start;
-gap:clamp(25px,15.625vw,250px);
-z-index:10;
-transform:translateY(25px);
-opacity:0;
-transition:transform 0.7s ease-out,opacity 0.7s ease-out;
-will-change:transform,opacity;
-}
 
-.game-cluster.in-view{
-transform:translateY(0);
-opacity:1;
-}
-.desktop-game{
-position:relative;
-top:auto;
-right:auto;
-}
+.game-cluster{position:absolute;top:53vw;right:10%;display:flex;align-items:flex-start;gap:clamp(25px,15.625vw,250px);z-index:10;transform:translateY(25px);opacity:0;transition:transform 0.7s ease-out,opacity 0.7s ease-out;will-change:transform,opacity;}
+.game-cluster.in-view{transform:translateY(0);opacity:1;}
 
-.potato-card{
-position:relative;
-top:13vw;
-width:200px;
-padding:15px;
-background:rgba(34,31,61,0.75);
-border:10px solid #97c94c;
-border-radius:25px;
-box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);
-flex-shrink:0;
-}
-  .potato-card img{
-display:block;
-width:100%;
-height:auto;
-border-radius:12px;
-}
-.steam{position:absolute;top:35vw;right:25%;z-index:20;}
+.desktop-game{position:relative;top:auto;right:auto;}
+
+.mobile-game{display:none;}
+
+.potato-card{position:relative;top:13vw;width:200px;padding:15px;background:rgba(34,31,61,0.75);border:10px solid #97c94c;border-radius:25px;box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);flex-shrink:0;}
+
+.potato-card img{display:block;width:100%;height:auto;border-radius:12px;}
+
+.steam{position:absolute;top:35vw;right:25%;z-index:20;transform:translateY(25px);opacity:0;transition:transform 0.7s ease-out,opacity 0.7s ease-out;}
+
+.steam.in-view{transform:translateY(0);opacity:1;}
+
 .steam img{display:block;width:auto;height:auto;transform:scale(1.5);transform-origin:center;filter:none;transition:transform 0.15s ease,filter 0.25s ease;}
+
 .steam.glow-start img{animation:steamGlowIn 0.5s ease forwards,steamGlowPulse 1s ease-in-out 0.5s infinite;}
+
 @keyframes steamGlowIn{from{filter:drop-shadow(0 0 0 rgba(151,201,76,0)) drop-shadow(0 0 0 rgba(151,201,76,0));}to{filter:drop-shadow(0 0 5px rgba(151,201,76,1)) drop-shadow(0 0 10px rgba(151,201,76,1));}}
+
 @keyframes steamGlowPulse{0%,100%{filter:drop-shadow(0 0 4px rgba(151,201,76,0.65)) drop-shadow(0 0 8px rgba(151,201,76,0.65));}50%{filter:drop-shadow(0 0 7px rgba(151,201,76,1)) drop-shadow(0 0 14px rgba(151,201,76,1));}}
+
 .steam img:hover{transform:scale(1.65);}
+
 .steam.glow-removed img{animation:none;filter:none;}
-.game-frame-wrap{
-width:980px;
-overflow:hidden;
-display:flex;
-justify-content:flex-end;
-background:rgba(34,31,61,0.75);
-border:10px solid #97c94c;
-border-radius:25px;
-box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);
-}
-.game-scale-box{width:980px;
-aspect-ratio:980 / 640;
-height:auto;transform-origin:top center;}
-.game-scale-box iframe{
-width:100%;
-height:100%;
-border:0;
-display:block;
-}
-.mobile-hero{width:65%;max-width:600px;margin:0 auto;text-align:center;}
-.mobile-hero img{width:100%;height:auto;display:block;margin:0 auto;}
+
+.game-frame-wrap{width:980px;overflow:hidden;display:flex;justify-content:flex-end;background:rgba(34,31,61,0.75);border:10px solid #97c94c;border-radius:25px;box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);}
+
+.game-scale-box{width:980px;aspect-ratio:980 / 640;height:auto;transform-origin:top center;}
+
+.game-scale-box iframe{width:100%;height:100%;border:0;display:block;}
+
 .links-section,.video-section{position:relative;width:100%;padding:25px;background:rgba(34,31,61,0.75);border:10px solid #97c94c;border-radius:25px;margin:30px auto 45px auto;transform:translateY(25px);opacity:0;transition:transform 0.7s ease-out,opacity 0.7s ease-out;box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);will-change:transform,opacity;}
+
 .links-section.in-view,.video-section.in-view{transform:translateY(0);opacity:1;}
+
 .links-section h2{font-family:'Sora',sans-serif;font-size:34px;font-weight:625;color:#97c94c;text-align:center;padding-bottom:25px;}
+
 .links-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px;justify-items:center;align-items:center;}
+
 .links-grid a{display:flex;align-items:center;justify-content:center;text-decoration:none;}
+
 .links-grid img{display:block;object-fit:cover;transition:transform 0.15s ease;}
+
 .links-grid img:hover{transform:scale(1.05);}
+
 .links-grid a:nth-child(-n+4){width:100%;}
+
 .links-grid a:nth-child(-n+4) img{width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;}
+
 .links-grid a:nth-child(n+5){width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;}
+
 .links-grid a:nth-child(n+5) img{max-width:75px;max-height:75px;width:auto;height:auto;object-fit:contain;}
+
 .link-label{font-family:'Sora',sans-serif;font-size:18px;font-weight:400;color:#97c94c;text-align:center;line-height:1.2;}
+
 .video-section{padding:15px;}
+
 .video-section h2{color:#97c94c;}
+
 .video-section p{color:#97c94c;}
+
 .video-section a{color:#97c94c;}
+
 .video-wrap{position:relative;width:100%;padding-bottom:56.25%;overflow:hidden;border-radius:12px;}
+
 .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+
 .section-intro{width:100%;padding:20px 25px 5px 25px;margin:30px auto 45px auto;background:rgba(34,31,61,0.75);border:6px solid #97c94c;border-radius:22px;box-shadow:0 10px 20px rgba(0,0,0,0.22),0 18px 35px rgba(0,0,0,0.14);transform:translateY(25px);opacity:0;transition:transform 0.7s ease-out,opacity 0.7s ease-out;}
+
 .section-intro.in-view{transform:translateY(0);opacity:1;}
+
 .section-intro h2{padding-bottom:15px;}
+
 .section-intro p{padding-bottom:15px;}
+
 @media (max-width:700px){
-body{background-image:url('mediaback.png');background-size:100% auto;background-color:#b139f2;font-family:'Sora',sans-serif;color:#97c94c;}
-.main-container{width:100%;padding-top:250px;}
-.desktop-only{display:none;}
-.mobile-only{display:block;}
-.content-column{width:90%;max-width:none;padding-top:1050px;}
+
+body{background-image:url('backdraft2.png');background-size:100% auto;background-position:top center;background-repeat:no-repeat;}
+
+.main-container{width:90%;max-width:1100px;padding-top:54vw;}
+
+.content-column{width:90%;max-width:none;padding-top:40vw;}
+
+.desktop-game{display:none;}
+
+.mobile-game{display:block;position:relative;width:76.5625vw;flex-shrink:0;}
+
+.mobile-game a{display:block;width:100%;}
+
+.mobile-game img{display:block;width:100%;height:auto;border:10px solid #97c94c;border-radius:25px;box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);}
+
+.potato-card{width:15.625vw;padding:1.171875vw;border-width:0.78125vw;border-radius:1.953125vw;}
+
+.potato-card img{border-radius:0.9375vw;}
+
+.steam{top:35vw;right:25%;}
+
 h1,h2{font-family:'Sora',sans-serif;font-size:24px;font-weight:625;color:#97c94c;padding-bottom:15px;}
+
 p{font-family:'Sora',sans-serif;font-size:17px;font-weight:400;color:#97c94c;padding-bottom:15px;}
+
 a{font-family:'Sora',sans-serif;font-size:17px;font-weight:400;color:#97c94c;}
+
 .custom-spacing{height:15px;}
+
 .links-section,.video-section{width:100%;padding:15px;border-width:10px;border-radius:20px;margin:20px auto 35px auto;}
+
 .links-section h2{font-size:24px;font-weight:625;padding-bottom:15px;}
+
 .links-grid{grid-template-columns:repeat(2,1fr);gap:15px;}
+
 .links-grid a:nth-child(-n+4) img{width:100%;height:auto;aspect-ratio:2/1;}
-.links-grid a:nth-child(n+5) img{width:100%;height:auto;aspect-ratio:1/1;}
+
+.links-grid a:nth-child(n+5) img{max-width:75px;max-height:75px;width:auto;height:auto;aspect-ratio:auto;object-fit:contain;}
+
 }
+
 </style>
 
 </head>
 
 <body>
 
-<div class="desktop-only steam">
+<div class="steam">
 
 <a href="https://store.steampowered.com/app/4789360/Imma_Potato/" target="_blank">
 
@@ -172,7 +187,7 @@ a{font-family:'Sora',sans-serif;font-size:17px;font-weight:400;color:#97c94c;}
 
 </div>
 
-<div class="desktop-only game-cluster">
+<div class="game-cluster">
 
 <div class="potato-card">
 
@@ -196,23 +211,19 @@ a{font-family:'Sora',sans-serif;font-size:17px;font-weight:400;color:#97c94c;}
 
 </div>
 
-</div>
+<div class="mobile-game">
 
-<div class="main-container">
+<a href="https://store.steampowered.com/app/4789360/Imma_Potato/" target="_blank">
 
-<div class="mobile-only">
-
-<div class="mobile-hero">
-
-<a href="https://russellyes.itch.io/immapotato" target="_blank">
-
-<img src="LandingScreen.jpg" alt="Imma Potato">
+<img src="steamCapsule.jpg" alt="Imma Potato on Steam">
 
 </a>
 
 </div>
 
 </div>
+
+<div class="main-container">
 
 <div class="custom-spacing">
 
@@ -450,13 +461,21 @@ a{font-family:'Sora',sans-serif;font-size:17px;font-weight:400;color:#97c94c;}
 
 <script>
 function scaleGameEmbed(){const wrap=document.querySelector('.game-frame-wrap');const box=document.getElementById('gameScaleBox');if(!wrap||!box)return;const originalWidth=980;const originalHeight=640;const availableWidth=wrap.clientWidth;const scale=Math.min(1,availableWidth/originalWidth);box.style.transform='scale('+scale+')';box.style.height=(originalHeight*scale)+'px';wrap.style.height=(originalHeight*scale)+'px';}
+
 window.addEventListener('load',scaleGameEmbed);
+
 window.addEventListener('resize',scaleGameEmbed);
+
 const steamButton=document.querySelector('.steam');
+
 const gameFrame=document.querySelector('.game-frame-wrap iframe');
+
 if(steamButton&&gameFrame){gameFrame.addEventListener('load',function(){steamButton.classList.add('glow-start');});steamButton.addEventListener('mouseenter',function(){steamButton.classList.remove('glow-start');steamButton.classList.add('glow-removed');},{once:true});}
-const scrollSections=document.querySelectorAll('.video-section,.links-section,.section-intro,.game-cluster');
+
+const scrollSections=document.querySelectorAll('.video-section,.links-section,.section-intro,.game-cluster,.steam');
+
 const scrollObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('in-view');}else{entry.target.classList.remove('in-view');}});},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+
 scrollSections.forEach(function(section){scrollObserver.observe(section);});
 </script>
 
