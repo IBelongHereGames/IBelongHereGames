@@ -412,7 +412,7 @@ window.addEventListener('resize',scaleGameEmbed);
 const steamButton=document.querySelector('.steam');
 const gameFrame=document.querySelector('.game-frame-wrap iframe');
 if(steamButton&&gameFrame){gameFrame.addEventListener('load',function(){steamButton.classList.add('glow-start');});steamButton.addEventListener('mouseenter',function(){steamButton.classList.remove('glow-start');steamButton.classList.add('glow-removed');},{once:true});}
-const scrollSections=document.querySelectorAll('.video-section,.links-section,.section-intro');
+const scrollSections=document.querySelectorAll('.video-section,.links-section,.section-intro,.desktop-game');
 const scrollObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('in-view');}else{entry.target.classList.remove('in-view');}});},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
 scrollSections.forEach(function(section){scrollObserver.observe(section);});
 </script>
