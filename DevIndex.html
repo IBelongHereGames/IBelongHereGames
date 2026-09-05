@@ -47,7 +47,7 @@ a{font-family:'Sora',sans-serif;font-size:22px;font-weight:400;color:#97c94c;}
 .custom-spacing{height:30px;}
 .desktop-only{display:block;}
 .mobile-only{display:none;}
-.desktop-game{position:absolute;top:55vw;right:10%;z-index:10;}
+.desktop-game{position:absolute;top:53vw;right:10%;z-index:10;}
 .steam{position:absolute;top:35vw;right:25%;z-index:20;}
 .steam img{display:block;width:auto;height:auto;transform:scale(1.5);transform-origin:center;filter:none;transition:transform 0.15s ease,filter 0.25s ease;}
 .steam.glow-start img{animation:steamGlowIn 0.5s ease forwards,steamGlowPulse 1s ease-in-out 0.5s infinite;}
@@ -56,11 +56,14 @@ a{font-family:'Sora',sans-serif;font-size:22px;font-weight:400;color:#97c94c;}
 .steam img:hover{transform:scale(1.65);}
 .steam.glow-removed img{animation:none;filter:none;}
 .game-frame-wrap{
-width:980px;
+width:1000px;
 overflow:hidden;
 display:flex;
 justify-content:flex-end;
-box-shadow:0 0 8px rgba(151,201,76,0.95),0 0 18px rgba(151,201,76,0.75),0 0 30px rgba(151,201,76,0.45);
+background:rgba(34,31,61,0.75);
+border:10px solid #97c94c;
+border-radius:25px;
+box-shadow:0 10px 20px rgba(0,0,0,0.28),0 20px 40px rgba(0,0,0,0.18);
 }
 .game-scale-box{width:980px;
 aspect-ratio:980 / 640;
